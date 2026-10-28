@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this scientific account or its code, cite the repository at the commit used."
+title: "A Collective Threshold for Landauer Erasure"
+authors:
+  - family-names: Lin
+    given-names: Ruge
+    email: gogoko699@gmail.com
+repository-code: "https://github.com/GoGoKo699/Landauer-Bath-Threshold"
+license: MIT
+keywords:
+  - quantum thermodynamics
+  - Landauer erasure
+  - finite reservoirs
+  - spectral constraints
