@@ -32,9 +32,9 @@ This guide identifies the exact sources and versions behind the imported proof i
 - [Publisher record / DOI](https://doi.org/10.1093/qmath/11.1.50)
 - **Specialization used:** for positive matrices, with eigenvalues in the same decreasing order,
 
-  ```math
-  \sum_j|\lambda_j(\rho)-\lambda_j(\omega)|\le\|\rho-\omega\|_1.
-  ```
+```math
+\sum_j|\lambda_j(\rho)-\lambda_j(\omega)|\le\|\rho-\omega\|_1.
+```
 
 The original bibliographic record is verified at the publisher. An accessible explicit statement of precisely this specialization is [Shirokov22](#shirokov22), Sec. 2.1, Eq. (3) in the arXiv version; it is Eq. (2.1) in the published version. This source distinction avoids assigning an unchecked equation number to the original paper.
 
@@ -56,9 +56,9 @@ The original bibliographic record is verified at the publisher. An accessible ex
 - [Author's official book page and manuscript](https://cs.uwaterloo.ca/~watrous/TQI/)
 - **Exact dependency:** Theorem 5.38, Eq. (5.190), pp. 282–283. The book's base-two relative entropy gives the coefficient $`1/(2\ln2)`$. Multiplying relative entropy by $`\ln2`$ gives the convention used here:
 
-  ```math
-  D(\rho\Vert\omega)\ge\frac12\|\rho-\omega\|_1^2.
-  ```
+```math
+D(\rho\Vert\omega)\ge\frac12\|\rho-\omega\|_1^2.
+```
 
 The proof proceeds through optimal binary discrimination and relative-entropy data processing. The book's bibliographic remarks identify earlier quantum formulations; the label [Pinsker] here names the inequality, not a claim of authorship by Watrous.
 
@@ -76,7 +76,7 @@ The proof proceeds through optimal binary discrimination and relative-entropy da
 
 - [Publisher / DOI](https://doi.org/10.1080/01621459.1963.10500830)
 - [University-hosted scan](https://www.cs.rpi.edu/academics/courses/spring06/random/hoefding.pdf)
-- **Exact dependency:** Theorem 1, Eq. (2.3), p. 15. For $`K\sim\operatorname{Bin}(m,p)`$ and $`u\ge0`$, it gives $`\Pr[K-mp\ge u]\le e^{-2u^2/m}`$; the lower-tail version follows by replacing each Bernoulli variable by its complement. Both the virtual-qubit count and compression tail use this bound.
+- **Exact dependency:** Theorem 1, Eq. (2.3), p. 15. For $`K\sim\mathrm{Bin}(m,p)`$ and $`u\ge0`$, it gives $`\Pr[K-mp\ge u]\le e^{-2u^2/m}`$; the lower-tail version follows by replacing each Bernoulli variable by its complement. Both the virtual-qubit count and compression tail use this bound.
 
 <a id="blps12"></a>
 ### [BLPS12] Virtual qubits
@@ -151,6 +151,18 @@ The proof proceeds through optimal binary discrimination and relative-entropy da
 
 - [arXiv:2607.27341v1](https://arxiv.org/abs/2607.27341v1), 29 July 2026.
 - **Checked locations:** the definitions of classical and quantum bits, the explicit work-system model, Eqs. (2)–(5), and the finite-interaction comparison. Its macroscopic bath/work assumptions and restricted control frequencies differ from the prescribed finite-bath model here. No journal publication is assumed for this version.
+
+## Educational anchor
+
+<a id="va16"></a>
+### [VA16] The selected introduction to quantum thermodynamics
+
+**Sai Vinjanampathy and Janet Anders.** “Quantum Thermodynamics.” *Contemporary Physics* **57**(4), 545–579 (2016).
+
+- [Publisher / DOI](https://doi.org/10.1080/00107514.2016.1201896)
+- [arXiv:1508.06099v2](https://arxiv.org/abs/1508.06099v2), 10 May 2016. The learning route uses this version's section and page numbers.
+- **Educational role:** §2.1, pp. 3–5, introduces quantum heat, work, and entropy; §§2.3–2.4, pp. 6–7, introduce Landauer erasure and accessible side information; §4.1, pp. 17–20, supplies quantum maps and relative-entropy background.
+- **Bridge:** [learning/ANCHOR_BRIDGE.md](../learning/ANCHOR_BRIDGE.md) translates the conventions and supplies the additional steps to this project's prescribed paired bath. The [30-milestone map](../learning/MILESTONES.md) uses VA16 as its single educational anchor. The primary research sources above retain their separate roles in attribution and proof support.
 
 ## Reading the attribution correctly
 

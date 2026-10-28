@@ -35,7 +35,7 @@ There are $`2N`$ physical bath qubits. The pair count $`N`$ is used throughout. 
 \tau_{B,N}=\frac{e^{-\beta H_{B,N}}}{Z_N}
 =\bigotimes_{j=1}^{N}\tau_{\Delta+\delta_N}\otimes\tau_{\Delta-\delta_N},
 \qquad
-\tau_g=\operatorname{diag}(1-p_g,p_g),
+\tau_g=\mathrm{diag}(1-p_g,p_g),
 \quad p_g=\frac1{1+e^{\beta g}}.
 ```
 
@@ -47,7 +47,7 @@ One unitary $`U_N`$ acts on $`S B`$. Its induced memory channel is
 
 ```math
 \mathcal N_N(\rho)
-=\operatorname{Tr}_B\!\left[U_N(\rho\otimes\tau_{B,N})U_N^\dagger\right].
+=\mathrm{Tr}_B\!\left[U_N(\rho\otimes\tau_{B,N})U_N^\dagger\right].
 ```
 
 The unitary may depend on the known bath Hamiltonian, the temperature and the intended bath size. Predetermined external driving is allowed, so $`U_N`$ need not conserve the uncoupled energy. Interactions are off at the initial and final boundaries, and the bath Hamiltonian has the same value at both boundaries.
@@ -61,9 +61,9 @@ The construction uses a global permutation of energy-basis states. Control time,
 For a memory input $`\rho`$, heat is the mean increase in the energy of the entire bath:
 
 ```math
-Q_N(\rho)=\operatorname{Tr}\!\left[
+Q_N(\rho)=\mathrm{Tr}\!\left[
 (I_S\otimes H_{B,N})U_N(\rho\otimes\tau_{B,N})U_N^\dagger
-\right]-\operatorname{Tr}(H_{B,N}\tau_{B,N}).
+\right]-\mathrm{Tr}(H_{B,N}\tau_{B,N}).
 ```
 
 Positive heat means that the bath gains energy. With the degenerate memory and boundary conditions above, the net mean supplied work equals this heat. This equality concerns the stated externally driven model; it does not price a separate controller.
@@ -78,7 +78,7 @@ This is a population error for the specified initial memory. The stronger error 
 
 ```math
 \eta_N=\frac12\|\mathcal N_N-\mathcal R\|_\diamond,
-\qquad \mathcal R(X)=\operatorname{Tr}(X)|0\rangle\langle0|.
+\qquad \mathcal R(X)=\mathrm{Tr}(X)|0\rangle\langle0|.
 ```
 
 The factor $`1/2`$ is part of the convention. Diamond accuracy tests arbitrary memory inputs and their correlations with a reference. It implies $`\epsilon_N\le\eta_N`$. The construction establishes this stronger criterion directly; population accuracy of an arbitrary device is not used as a substitute for it.
@@ -90,11 +90,11 @@ Every finite Gibbs state here has full rank. Consequently a unitary on the finit
 All entropies and logarithms use natural units:
 
 ```math
-S(\rho)=-\operatorname{Tr}\rho\ln\rho,\qquad
-D(\rho\Vert\omega)=\operatorname{Tr}\rho(\ln\rho-\ln\omega).
+S(\rho)=-\mathrm{Tr}\rho\ln\rho,\qquad
+D(\rho\Vert\omega)=\mathrm{Tr}\rho(\ln\rho-\ln\omega).
 ```
 
-Let $`\sigma_{SB}=U_N(I_d/d\otimes\tau_{B,N})U_N^\dagger`$ and $`\sigma_S=\operatorname{Tr}_B\sigma_{SB}`$. Unitary entropy preservation and the Gibbs form give the standard exact Landauer identity [RW14]:
+Let $`\sigma_{SB}=U_N(I_d/d\otimes\tau_{B,N})U_N^\dagger`$ and $`\sigma_S=\mathrm{Tr}_B\sigma_{SB}`$. Unitary entropy preservation and the Gibbs form give the standard exact Landauer identity [RW14]:
 
 ```math
 \Sigma_N:=\beta Q_N-\ln d+S(\sigma_S)

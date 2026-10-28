@@ -55,7 +55,7 @@ Conditional on that sector, the state is exactly a Gibbs qubit at the same inver
 
 ```math
 \tau_{\mathrm v}=\tau_h
-=\operatorname{diag}(1-p_h,p_h),\qquad
+=\mathrm{diag}(1-p_h,p_h),\qquad
 p_h=\frac{1}{1+e^{\beta h}}.
 ```
 
@@ -108,7 +108,7 @@ where $`w_A=a_N`$ and a tensor product with zero active factors is one-dimension
 The pairs are independent, so their activity indicators are independent Bernoulli variables. Consequently
 
 ```math
-M\sim\operatorname{Bin}(N,a_N).
+M\sim\mathrm{Bin}(N,a_N).
 ```
 
 The strings $`\lambda`$ are labels of subspaces already present in the bath Hilbert space. No additional register is introduced to hold them.
@@ -149,7 +149,7 @@ Let
 ```math
 \eta_{\mathrm{act}}=\Pr[M<m],\qquad
 \eta_{\mathrm{cmp}}=\Pr[K>k],\qquad
-K\sim\operatorname{Bin}(m,p_h).
+K\sim\mathrm{Bin}(m,p_h).
 ```
 
 In every sector with enough active pairs, the selected $`m`$ virtual qubits begin in exactly $`\tau_h^{\otimes m}`$ and are independent of the untouched virtual qubits. The induced memory channel is therefore the same compression channel $`\mathcal C`$ in every such sector. On every remaining sector it is the identity channel. Hence the physical memory channel obeys the exact equality
@@ -157,7 +157,7 @@ In every sector with enough active pairs, the selected $`m`$ virtual qubits begi
 ```math
 \mathcal N_N
 =(1-\eta_{\mathrm{act}})\mathcal C
-+\eta_{\mathrm{act}}\operatorname{id}_S.
++\eta_{\mathrm{act}}\mathrm{id}_S.
 ```
 
 The compression proof gives $`\mathcal C=(1-\eta_{\mathrm{cmp}})\mathcal R+\eta_{\mathrm{cmp}}\mathcal B`$ for a channel $`\mathcal B`$. The weight of the replacement channel in the full protocol is consequently

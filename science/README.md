@@ -2,6 +2,8 @@
 
 [Home](../README.md)
 
+For an entry through thermodynamic concepts and the selected Vinjanampathy–Anders review, use the [learning guide](../learning/README.md), [source bridge](../learning/ANCHOR_BRIDGE.md), and [30-milestone map](../learning/MILESTONES.md). The route below leads directly through the authoritative scientific account.
+
 This project asks when a bath made of increasingly similar thermal qubits can erase a memory reversibly. The main result identifies the collective detuning scale that separates Landauer attainability from a positive heat excess.
 
 ## Connected reading route

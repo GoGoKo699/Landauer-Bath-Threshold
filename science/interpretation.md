@@ -8,7 +8,7 @@ The bath in this problem grows without changing its temperature or its baseline 
 
 The reason is spectral. The initial memory contributes a factor $`1/d`$ to every eigenvalue of the joint state. A nearly reset memory at the Landauer heat would leave a joint state close to a pure memory tensored with the original bath Gibbs state. A unitary must reconcile these two eigenvalue patterns. For a bath with a rigid spectral lattice, the required rescaling can fail even when each individual bath spin changes very little. The identical-spin maximal-cooling heat law and its arithmetic exceptions were established in [AHJM11]; see the [source comparison](../references/RELATED_WORK.md).
 
-The quantity $`\operatorname{Tr}\rho^{1+it}`$ is a convenient way to detect the residual pattern. Its absolute value is the modulus of the characteristic function of the random variable $`\ln\lambda`$, when eigenvalue $`\lambda`$ is sampled with probability $`\lambda`$. Thus it weights spectral locations by their actual population. It is also unchanged by every unitary, which makes it useful for a converse without specifying a control protocol.
+The quantity $`\mathrm{Tr}\rho^{1+it}`$ is a convenient way to detect the residual pattern. Its absolute value is the modulus of the characteristic function of the random variable $`\ln\lambda`$, when eigenvalue $`\lambda`$ is sampled with probability $`\lambda`$. Thus it weights spectral locations by their actual population. It is also unchanged by every unitary, which makes it useful for a converse without specifying a control protocol.
 
 ## Small local detunings can accumulate
 
@@ -17,7 +17,7 @@ At the frequency $`t_0=2\pi/(\beta\Delta)`$, the phases contributed by a perfect
 For the paired bath this gives
 
 ```math
-\left|\operatorname{Tr}\tau_{B,N}^{1+it_0}\right|^2
+\left|\mathrm{Tr}\tau_{B,N}^{1+it_0}\right|^2
 \sim\exp\!\left[-8\pi^2p(1-p)
 N(\delta_N/\Delta)^2\right]
 ```

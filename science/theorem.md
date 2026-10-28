@@ -15,17 +15,8 @@ Fix $`d\ge2`$, $`0<\beta<\infty`$ and $`\Delta>0`$, and let $`0<\delta_N<\Delta`
 The following three statements are equivalent:
 
 1. There exist allowed unitaries $`U_N`$ with $`\epsilon_N\to0`$ and $`\beta Q_N(I_d/d)\to\ln d`$.
-2. The accumulated detuning diverges:
-
-   ```math
-   c_N=N(\delta_N/\Delta)^2\longrightarrow\infty.
-   ```
-
-3. There exist allowed unitaries whose memory channels obey $`\eta_N\to0`$ and whose maximum input heat obeys
-
-   ```math
-   \sup_{\rho_S}\beta Q_N(\rho_S)\longrightarrow\ln d.
-   ```
+2. The accumulated detuning diverges: $`c_N=N(\delta_N/\Delta)^2\longrightarrow\infty`$.
+3. There exist allowed unitaries whose memory channels obey $`\eta_N\to0`$ and whose maximum input heat obeys $`\sup_{\rho_S}\beta Q_N(\rho_S)\longrightarrow\ln d`$.
 
 The same construction proves $`2\Rightarrow3`$ without the nonresonance condition. The implication $`1\Rightarrow2`$ is the part that requires it.
 
@@ -101,7 +92,7 @@ The [explicit permutation](compression.md) then resets the memory for every init
 
 ```math
 \frac12\|\mathcal C-\mathcal R\|_\diamond
-\le\Pr[\operatorname{Bin}(m,p_h)>k_*],
+\le\Pr[\mathrm{Bin}(m,p_h)>k_*],
 \qquad
 \sup_{\rho_S}Q(\rho_S)\le rh.
 ```
@@ -120,7 +111,7 @@ a_N=p_+(1-p_-)+(1-p_+)p_-.
 
 Its conditional two-level state is Gibbs at the same inverse temperature with gap $`h_N=2\delta_N`$. Choose an integer $`m\le N`$ and a compression certificate for $`m`$ such virtual qubits. Conditional on an activity pattern with at least $`m`$ active pairs, use the first $`m`$ of them. Act as identity on the other activity patterns. This is a direct-sum unitary on the original bath; the pattern is not measured.
 
-Writing $`M\sim\operatorname{Bin}(N,a_N)`$ and $`K\sim\operatorname{Bin}(m,(1+e^{2\beta\delta_N})^{-1})`$, the resulting physical channel has
+Writing $`M\sim\mathrm{Bin}(N,a_N)`$ and $`K\sim\mathrm{Bin}(m,(1+e^{2\beta\delta_N})^{-1})`$, the resulting physical channel has
 
 ```math
 \eta_N\le\Pr[M<m]+\Pr[K>k_*],

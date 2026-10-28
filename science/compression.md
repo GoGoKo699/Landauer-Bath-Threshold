@@ -47,7 +47,7 @@ B_m(\ell+r)\ge d\,B_m(\ell)
 
 The ratio condition implies these cumulative inequalities, as proved below. Either set of inequalities is a valid finite certificate.
 
-Let $`K\sim\operatorname{Bin}(m,p_b)`$ and define the excluded thermal mass
+Let $`K\sim\mathrm{Bin}(m,p_b)`$ and define the excluded thermal mass
 
 ```math
 \eta_m=\Pr[K>k]
@@ -59,7 +59,7 @@ Let $`K\sim\operatorname{Bin}(m,p_b)`$ and define the excluded thermal mass
 ```math
 \frac12\left\|\mathcal E_{m,k,r}-\mathcal R\right\|_\diamond
 \le\eta_m,\qquad
-\mathcal R(X)=|0\rangle\langle0|\operatorname{Tr}X,
+\mathcal R(X)=|0\rangle\langle0|\mathrm{Tr}X,
 ```
 
 and whose heat for every memory density matrix $`\rho`$ satisfies
@@ -151,7 +151,7 @@ U_{m,k,r}
 |0\rangle_S\otimes V_j|\psi\rangle_B.
 ```
 
-Tracing out the bath therefore gives exactly $`\mathcal R`$ for every memory input. If the memory is entangled with a reference, the same calculation gives $`\mathcal R\otimes\operatorname{id}`$ on their joint state.
+Tracing out the bath therefore gives exactly $`\mathcal R`$ for every memory input. If the memory is entangled with a reference, the same calculation gives $`\mathcal R\otimes\mathrm{id}`$ on their joint state.
 
 The thermal bath is diagonal in the chosen basis. Its ranks $`j\le R`$ have total weight $`1-\eta_m`$. Averaging the remaining conditional channels gives a completely positive trace-preserving channel $`\mathcal B`$ such that
 
@@ -205,7 +205,7 @@ Hence for every memory state, including one with coherence in the chosen basis,
 ```math
 \begin{aligned}
 Q_{m,k,r}(\rho)
-&=\operatorname{Tr}\!\left[
+&=\mathrm{Tr}\!\left[
 (\rho\otimes\tau_h^{\otimes m})\Delta H
 \right]\\
 &\le rh(1-\eta_m)
