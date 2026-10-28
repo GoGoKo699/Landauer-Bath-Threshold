@@ -11,13 +11,13 @@ Let the initial memory state be $`I_d/d`$, let the bath be $`\tau_B=e^{-\beta H_
 ```math
 \rho_0=\frac{I_d}{d}\otimes\tau_B,\qquad
 \sigma_{SB}=U\rho_0U^\dagger,\qquad
-\sigma_S=\operatorname{Tr}_B\sigma_{SB}.
+\sigma_S=\mathrm{Tr}_B\sigma_{SB}.
 ```
 
 The heat and target reset error for this input are
 
 ```math
-Q=\operatorname{Tr}H_B(\sigma_B-\tau_B),\qquad
+Q=\mathrm{Tr}H_B(\sigma_B-\tau_B),\qquad
 \epsilon=1-\langle0|\sigma_S|0\rangle.
 ```
 
@@ -32,7 +32,7 @@ All logarithms are natural. The bath has full rank because its dimension and inv
 \end{aligned}
 ```
 
-This is the standard equality form of Landauer's principle [[RW14]](../references/LITERATURE.md#rw14). To see it directly, expand the relative entropy using $`\ln\tau_B=-\beta H_B-\ln Z_B`$ and substitute $`S(\sigma_{SB})=\ln d+S(\tau_B)`$. The support of $`\sigma_{SB}`$ is contained in $`\operatorname{supp}(\sigma_S)\otimes\mathcal H_B`$, so the expression remains finite if the final memory is not full rank.
+This is the standard equality form of Landauer's principle [[RW14]](../references/LITERATURE.md#rw14). To see it directly, expand the relative entropy using $`\ln\tau_B=-\beta H_B-\ln Z_B`$ and substitute $`S(\sigma_{SB})=\ln d+S(\tau_B)`$. The support of $`\sigma_{SB}`$ is contained in $`\mathrm{supp}(\sigma_S)\otimes\mathcal H_B`$, so the expression remains finite if the final memory is not full rank.
 
 Define
 
@@ -50,7 +50,7 @@ Consequently any positive lower bound on $`\Sigma`$ becomes an explicit heat bou
 For real $`t`$, define
 
 ```math
-F_t(\rho)=\operatorname{Tr}\rho^{\,1+it},\qquad
+F_t(\rho)=\mathrm{Tr}\rho^{\,1+it},\qquad
 0^{\,1+it}:=0,\qquad
 L_t=\sqrt{1+t^2}.
 ```
@@ -181,7 +181,7 @@ For a Gibbs bath the magnitude of the witness has a useful interpretation:
 
 ```math
 F_t(\tau_B)
-=Z_B^{-it}\operatorname{Tr}\!\left(\tau_B e^{-it\beta H_B}\right).
+=Z_B^{-it}\mathrm{Tr}\!\left(\tau_B e^{-it\beta H_B}\right).
 ```
 
 Thus $`|F_t(\tau_B)|`$ is the magnitude of the equilibrium characteristic function of the bath energy at frequency $`t\beta`$. The obstruction survives when the bath retains a nonzero spectral phase signal at a frequency that distinguishes a maximally mixed memory from a pure memory.

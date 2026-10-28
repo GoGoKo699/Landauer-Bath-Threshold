@@ -18,6 +18,19 @@ Canonical science:
   dense formal gaps versus reversibility, and control-resource meaning.
 - science/README.md: connected reading route and proof dependency map.
 
+Learning route:
+- The single educational anchor is Sai Vinjanampathy and Janet Anders,
+  Quantum Thermodynamics (2016), arXiv:1508.06099v2. Relevant sections are
+  2.1, 2.3–2.4, and 4.1; the project bridge supplies the additional steps.
+- learning/README.md: entry points and the relation between source,
+  project-defined understanding targets, and specialist proofs.
+- learning/ANCHOR_BRIDGE.md: source/version, notation and assumptions,
+  a worked example, and the bridge to the actual paired-bath theorem.
+- learning/MILESTONES.md: the common map M01–M30, with 14 background
+  milestones and 16 narrative milestones, dependencies and source pointers.
+- Primary references remain proof dependencies and scholarly attribution;
+  they are separate from the selected educational anchor.
+
 Attribution and verification:
 - references/RELATED_WORK.md: exact subtraction from known fixed-gap results,
   finite error–heat optimization, spectral conditions and collision protocols.
@@ -50,6 +63,8 @@ Essential distinctions:
 - Fixed-gap resonance laws and finite-bath optimizers are prior work.
 
 Reading intentions:
+- For a conceptual introduction: learning/README, ANCHOR_BRIDGE, then the
+  milestones and their linked canonical scientific sections.
 - For the main result: model, theorem, then the two proof branches.
 - For implementation: compression, paired_bath, then verification.
 - For significance or priority: interpretation and RELATED_WORK together.

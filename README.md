@@ -26,7 +26,7 @@ The [theorem](science/theorem.md) gives the exact quantifiers. Its converse appl
 
 ## What establishes the threshold
 
-**A spectral obstruction.** The unitary-invariant quantity $`\operatorname{Tr}\rho^{1+it}`$ detects residual spectral structure weighted by Gibbs probability. Combined with the exact Landauer identity and a dimension-independent continuity bound, it gives an explicit finite lower bound on excess heat. A bounded total squared detuning leaves a nonzero obstruction.
+**A spectral obstruction.** The unitary-invariant quantity $`\mathrm{Tr}\rho^{1+it}`$ detects residual spectral structure weighted by Gibbs probability. Combined with the exact Landauer identity and a dimension-independent continuity bound, it gives an explicit finite lower bound on excess heat. A bounded total squared detuning leaves a nonzero obstruction.
 
 **A matching compression.** Each pair's one-excitation sector is a virtual thermal qubit with gap $`2\delta_N`$. A positive fraction of the pairs occupy these sectors. A single block-diagonal permutation uses them to reset the memory. Its overflow completion moves displaced states to lower bath energy, controlling heat even on the small tail that is not reset.
 
@@ -52,6 +52,12 @@ Start with the [scientific route](science/README.md) or go directly to the [mode
 | What can be reproduced numerically? | [Verification](verification/README.md) and [claim map](verification/CLAIMS.md) |
 
 The [LLM reading guide](llms.txt) maps questions to these authoritative files.
+
+## Learning route
+
+The educational anchor is **Sai Vinjanampathy and Janet Anders, _Quantum Thermodynamics_ (2016)**, using [arXiv:1508.06099v2](https://arxiv.org/abs/1508.06099v2). Selected sections introduce heat, work, erasure, side information, and quantum maps.
+
+Start with the [learning guide](learning/README.md). The [source-to-project bridge](learning/ANCHOR_BRIDGE.md) translates the review's conventions and develops the steps needed for this particular bath. The [30-milestone map](learning/MILESTONES.md) contains 14 background milestones and 16 following the contribution, from the spectral obstruction and complete compression to the threshold and its physical meaning. Exact statements and specialist proofs remain in `science/`.
 
 ## Reproduce the finite checks
 

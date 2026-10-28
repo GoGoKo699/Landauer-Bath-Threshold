@@ -20,7 +20,7 @@ The exact entropy balance is inherited from [RW14](LITERATURE.md#rw14), with the
 =D(\sigma_{SB}\Vert\sigma_S\otimes\tau_B).
 ```
 
-The [spectral obstruction](../science/spectral_obstruction.md) combines this identity with the ordered-eigenvalue trace-norm inequality [Mirsky60](LITERATURE.md#mirsky60) and quantum [Pinsker](LITERATURE.md#pinsker). Its additional step uses the unitary-invariant, tensor-multiplicative function $`F_t(\rho)=\operatorname{Tr}\rho^{1+it}`$ to detect a mismatch between the preserved joint spectrum and the spectrum required by reversible erasure. The scalar Lipschitz estimate is supplied in the proof; no operator-Lipschitz theorem is assumed.
+The [spectral obstruction](../science/spectral_obstruction.md) combines this identity with the ordered-eigenvalue trace-norm inequality [Mirsky60](LITERATURE.md#mirsky60) and quantum [Pinsker](LITERATURE.md#pinsker). Its additional step uses the unitary-invariant, tensor-multiplicative function $`F_t(\rho)=\mathrm{Tr}\rho^{1+it}`$ to detect a mismatch between the preserved joint spectrum and the spectrum required by reversible erasure. The scalar Lipschitz estimate is supplied in the proof; no operator-Lipschitz theorem is assumed.
 
 The construction uses the established virtual-qubit perspective [BLPS12](LITERATURE.md#blps12) and binomial concentration [Hoeffding63](LITERATURE.md#hoeffding63). The new work is to arrange a complete permutation with a uniform heat bound in the joint small-gap, large-bath limit, and to implement it coherently inside the occupied sectors of the original paired bath.
 

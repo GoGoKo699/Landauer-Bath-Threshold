@@ -55,7 +55,7 @@ Conditional on that sector, the state is exactly a Gibbs qubit at the same inver
 
 ```math
 \tau_{\mathrm v}=\tau_h
-=\operatorname{diag}(1-p_h,p_h),\qquad
+=\mathrm{diag}(1-p_h,p_h),\qquad
 p_h=\frac{1}{1+e^{\beta h}}.
 ```
 
@@ -108,7 +108,7 @@ where $`w_A=a_N`$ and a tensor product with zero active factors is one-dimension
 The pairs are independent, so their activity indicators are independent Bernoulli variables. Consequently
 
 ```math
-M\sim\operatorname{Bin}(N,a_N).
+M\sim\mathrm{Bin}(N,a_N).
 ```
 
 The strings $`\lambda`$ are labels of subspaces already present in the bath Hilbert space. No additional register is introduced to hold them.
@@ -125,14 +125,14 @@ Choose an integer $`1\le m\le N`$ and integers $`k,r`$ satisfying the [finite co
 
 Let $`U_{m,k,r}`$ denote the complete compression permutation from that proof.
 
-For each sector with $`M(\lambda)\ge m`$, select the first $`m`$ active pairs in physical index order. On this sector, apply $`U_{m,k,r}`$ to the memory and those $`m`$ virtual qubits, and act as identity on the other virtual qubits. On sectors with $`M(\lambda)<m`$, act as identity on the memory and the entire sector. Formally,
+For each sector with $`M(\lambda)\ge m`$, select the first $`m`$ active pairs in physical index order. On this sector, apply $`U_{m,k,r}`$ to the memory and those $`m`$ virtual qubits, and act as identity on the other virtual qubits. On sectors with $`M(\lambda)\lt m`$, act as identity on the memory and the entire sector. Formally,
 
 ```math
 U_N=\bigoplus_\lambda U_\lambda,\qquad
 U_\lambda=
 \begin{cases}
 U_{m,k,r}\otimes I_{M(\lambda)-m},&M(\lambda)\ge m,\\
-I_{S\otimes\mathcal H_\lambda},&M(\lambda)<m,
+I_{S\otimes\mathcal H_\lambda},&M(\lambda)\lt m,
 \end{cases}
 ```
 
@@ -147,9 +147,9 @@ The construction may require elaborate global control. Its admissibility is the 
 Let
 
 ```math
-\eta_{\mathrm{act}}=\Pr[M<m],\qquad
+\eta_{\mathrm{act}}=\Pr[M\lt m],\qquad
 \eta_{\mathrm{cmp}}=\Pr[K>k],\qquad
-K\sim\operatorname{Bin}(m,p_h).
+K\sim\mathrm{Bin}(m,p_h).
 ```
 
 In every sector with enough active pairs, the selected $`m`$ virtual qubits begin in exactly $`\tau_h^{\otimes m}`$ and are independent of the untouched virtual qubits. The induced memory channel is therefore the same compression channel $`\mathcal C`$ in every such sector. On every remaining sector it is the identity channel. Hence the physical memory channel obeys the exact equality
@@ -157,7 +157,7 @@ In every sector with enough active pairs, the selected $`m`$ virtual qubits begi
 ```math
 \mathcal N_N
 =(1-\eta_{\mathrm{act}})\mathcal C
-+\eta_{\mathrm{act}}\operatorname{id}_S.
++\eta_{\mathrm{act}}\mathrm{id}_S.
 ```
 
 The compression proof gives $`\mathcal C=(1-\eta_{\mathrm{cmp}})\mathcal R+\eta_{\mathrm{cmp}}\mathcal B`$ for a channel $`\mathcal B`$. The weight of the replacement channel in the full protocol is consequently
@@ -207,7 +207,7 @@ Choose
 m=\left\lfloor\frac{Na_N}{2}\right\rfloor
 ```
 
-and assume $`m\ge1`$. Since $`\mathbb E M=Na_N`$, the event $`M<m`$ implies $`M<Na_N/2`$. Hoeffding's inequality [[Hoeffding63]](../references/LITERATURE.md#hoeffding63) gives
+and assume $`m\ge1`$. Since $`\mathbb E M=Na_N`$, the event $`M\lt m`$ implies $`M\lt Na_N/2`$. Hoeffding's inequality [[Hoeffding63]](../references/LITERATURE.md#hoeffding63) gives
 
 ```math
 \boxed{\;
@@ -249,7 +249,7 @@ L=\ln d,\qquad
 Whenever
 
 ```math
-m\ge1,\qquad 0<b\le1,\qquad \gamma\le\frac12,
+m\ge1,\qquad 0\lt b\le1,\qquad \gamma\le\frac12,
 ```
 
 the [explicit compression selector](compression.md#6-an-explicit-parameter-choice)
