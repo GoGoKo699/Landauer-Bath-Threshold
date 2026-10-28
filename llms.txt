@@ -1,0 +1,57 @@
+# A Collective Threshold for Landauer Erasure
+
+This repository determines when shrinking inhomogeneity in a prescribed paired
+thermal-qubit bath permits a universal memory-reset channel at Landauer heat.
+
+Canonical science:
+- science/model.md: apparatus, fixed parameters, heat/work boundary, population
+  error, half-diamond convention, exact Landauer identity and nonresonance.
+- science/theorem.md: T1 equivalence, finite spectral bound S1, compression C1,
+  paired realization P1 and dense-energy-difference consequence.
+- science/spectral_obstruction.md: complex spectral moment, continuity proof,
+  all-unitary finite-error converse and bounded squared-detuning extension.
+- science/compression.md: finite cumulative-binomial certificate, completed
+  permutation, uniform-input heat bound and uniform small-gap limit.
+- science/paired_bath.md: thermal activity sectors, virtual gap 2 delta,
+  direct-sum implementation and concentration bounds.
+- science/interpretation.md: thermal weighting, collective fluctuation scale,
+  dense formal gaps versus reversibility, and control-resource meaning.
+- science/README.md: connected reading route and proof dependency map.
+
+Attribution and verification:
+- references/RELATED_WORK.md: exact subtraction from known fixed-gap results,
+  finite error–heat optimization, spectral conditions and collision protocols.
+- references/LITERATURE.md: primary-source identities and used locations.
+- verification/README.md: reproducible commands, output meanings and limits.
+- verification/CLAIMS.md: each central statement and its proof/check evidence.
+- scripts/run_checks.py: deterministic finite numerical reproduction.
+- results/: committed reference data; use the verification guide to interpret.
+- provenance/README.md: source roles and AI-assistance disclosure.
+
+Essential distinctions:
+- N counts pairs; the bath contains 2N physical qubits.
+- d, beta, and Delta are fixed; beta > 0 and 0 < delta_N < Delta, with
+  delta_N tending to zero.
+- The collective variable is c_N=N(delta_N/Delta)^2.
+- Nonresonance ln(d)/(beta Delta) not in Z is needed for necessity, not for
+  the attainable direction when c_N diverges.
+- Heat is energy gained by the complete fixed Gibbs bath. The memory has
+  zero boundary Hamiltonian, and predetermined external driving is allowed.
+- No additional entropy-carrying ancillary system is supplied.
+- A good bath subspace resets the entire memory input space, including
+  reference-entangled inputs. Half-diamond error is used, not full diamond.
+- The maximum-input heat tends to ln(d)/beta; a common heat value for every
+  input is not asserted.
+- The spectral lower bound and finite construction need not be optimal at
+  finite N. No exact critical-window optimal heat curve is claimed.
+- The all-unitary converse does not imply an efficient circuit. Finite checks
+  do not establish the asymptotic or universal quantifiers on their own.
+- The general unpaired extension is a converse only.
+- Fixed-gap resonance laws and finite-bath optimizers are prior work.
+
+Reading intentions:
+- For the main result: model, theorem, then the two proof branches.
+- For implementation: compression, paired_bath, then verification.
+- For significance or priority: interpretation and RELATED_WORK together.
+- For a numerical plot: inspect its generating code and table, and retain
+  the distinction between a bound, a construction and an optimized value.

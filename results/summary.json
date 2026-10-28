@@ -1,0 +1,165 @@
+{
+  "normalization": {
+    "d": 2,
+    "Delta": 1.0,
+    "beta": 1.3862943611198906,
+    "beta_Delta": 1.3862943611198906,
+    "t0": 4.532360141827194,
+    "logs": "natural",
+    "heat_units": "Delta=1"
+  },
+  "reproducibility": {
+    "seed": 20261028,
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8",
+    "command": "python scripts/run_checks.py"
+  },
+  "table_row_counts": {
+    "unitary_checks.csv": 42,
+    "finite_lp_frontier.csv": 32,
+    "cutoff_permutations.csv": 7,
+    "binomial_certificates.csv": 99,
+    "threshold_curves.csv": 671,
+    "construction_curves.csv": 182
+  },
+  "unitary_checks": {
+    "sample_count": 42,
+    "positive_witness_count": 24,
+    "largest_joint_dimension": 128,
+    "minimum_witness_slack": -6.661338147750939e-16,
+    "minimum_positive_witness_slack": 0.154141284524263,
+    "maximum_entropy_identity_residual": 1.7763568394002505e-15,
+    "maximum_unitarity_residual": 2.588445170899874e-15
+  },
+  "population_LP": {
+    "instances": 32,
+    "largest_joint_dimension": 32,
+    "minimum_optimum_minus_witness_lower": 0.022717520376040978,
+    "maximum_stochastic_residual": 5.551115123125783e-16,
+    "maximum_population_residual": 1.3877787807814457e-16
+  },
+  "cumulative_count_checks": {
+    "parameter_choices": 99,
+    "certified_choices": 49,
+    "exact_shell_inequalities_checked": 6029
+  },
+  "construction_logarithmic_cutoff": {
+    "certified_points": 70,
+    "first_certified": {
+      "N_pairs": 125893,
+      "delta": 0.018580938618357534,
+      "Delta": 1.0,
+      "beta": 1.3862943611198906,
+      "d": 2,
+      "activity_probability": 0.3200721860060773,
+      "m_virtual": 20147,
+      "b_virtual": 0.051517300861887716,
+      "z_virtual": 53.470788508234996,
+      "cutoff_rule": "logarithmic",
+      "inactive_pattern_probability_upper": 5e-324,
+      "inactive_pattern_log_probability_upper": -6448.629996119037,
+      "inactive_pattern_upper_underflowed": true,
+      "certified": true,
+      "k": 9955,
+      "r": 53,
+      "beta_heat_upper": 2.730416945680049,
+      "reset_error_upper": 0.13540294195965713,
+      "reset_log_error_upper": -1.9995001908252605,
+      "log_rank_ratio_lower": 0.6944709249166356,
+      "virtual_log_probability_upper": -1.9995001908252605,
+      "virtual_probability_upper_underflowed": false,
+      "alpha": 0.25,
+      "amplitude": 0.35,
+      "collective_detuning_c": 43.464719385381976,
+      "landauer_beta_heat": 0.6931471805599453
+    },
+    "largest_N": {
+      "N_pairs": 1000000000000,
+      "delta": 0.00035,
+      "Delta": 1.0,
+      "beta": 1.3862943611198906,
+      "d": 2,
+      "activity_probability": 0.3200000256139106,
+      "m_virtual": 160000012806,
+      "b_virtual": 0.0009704060527839234,
+      "z_virtual": 150670.07722400333,
+      "cutoff_rule": "logarithmic",
+      "inactive_pattern_probability_upper": 5e-324,
+      "inactive_pattern_log_probability_upper": -51200008196.45172,
+      "inactive_pattern_upper_underflowed": true,
+      "certified": true,
+      "k": 79961880750,
+      "r": 728,
+      "beta_heat_upper": 0.7064556064266962,
+      "reset_error_upper": 0.0025762141430597427,
+      "reset_log_error_upper": -5.961434344125367,
+      "log_rank_ratio_lower": 0.693873641088513,
+      "virtual_log_probability_upper": -5.961434344125367,
+      "virtual_probability_upper_underflowed": false,
+      "alpha": 0.25,
+      "amplitude": 0.35,
+      "collective_detuning_c": 122500.0,
+      "landauer_beta_heat": 0.6931471805599453
+    }
+  },
+  "homogeneous_control": {
+    "attribution": "Allahverdyan et al., Phys. Rev. E 84, 041109 (2011), Sec. VI.B",
+    "known_maximal_cooling_asymptotic_beta_Q": 0.9241962407465937,
+    "known_maximal_cooling_asymptotic_excess_over_ln2": 0.23104906018664842,
+    "zero_error_spectral_witness_intercept": 0.09284064709081624,
+    "finite_max_cooling_permutations": [
+      {
+        "bath_qubits": 2,
+        "actual_beta_heat_maxmixed": 0.41588830833596724,
+        "actual_reset_error_maxmixed": 0.2,
+        "worst_input_beta_heat": 0.6654212933375476,
+        "minimum_input_beta_heat": 0.16635532333438682,
+        "largest_pointwise_energy_increase_in_gap_units": 1
+      },
+      {
+        "bath_qubits": 4,
+        "actual_beta_heat_maxmixed": 0.6155146963372314,
+        "actual_reset_error_maxmixed": 0.10400000000000001,
+        "worst_input_beta_heat": 0.9138452428502319,
+        "minimum_input_beta_heat": 0.31718414982423093,
+        "largest_pointwise_energy_increase_in_gap_units": 2
+      },
+      {
+        "bath_qubits": 8,
+        "actual_beta_heat_maxmixed": 0.8433549471760076,
+        "actual_reset_error_maxmixed": 0.033343999999999985,
+        "worst_input_beta_heat": 1.2766293830642983,
+        "minimum_input_beta_heat": 0.410080511287717,
+        "largest_pointwise_energy_increase_in_gap_units": 4
+      },
+      {
+        "bath_qubits": 12,
+        "actual_beta_heat_maxmixed": 0.9055768846581561,
+        "actual_reset_error_maxmixed": 0.011654205439999996,
+        "worst_input_beta_heat": 1.3675804174943789,
+        "minimum_input_beta_heat": 0.4435733518219338,
+        "largest_pointwise_energy_increase_in_gap_units": 6
+      },
+      {
+        "bath_qubits": 16,
+        "actual_beta_heat_maxmixed": 0.9348157059856061,
+        "actual_reset_error_maxmixed": 0.004239749709823996,
+        "worst_input_beta_heat": 1.4178279974487653,
+        "minimum_input_beta_heat": 0.45180341452243883,
+        "largest_pointwise_energy_increase_in_gap_units": 8
+      }
+    ]
+  },
+  "contracts": {
+    "unitary_sampling": "Finite numerical checks, not a proof of the universal bound; coherent near-cooling samples keep the spectral correction nonzero.",
+    "LP": "Numerical all-unitary optimum of mean heat at a target-population error for I_d/d input, by Schur-Horn. Not a diamond-error or universal-channel optimum. Solver tolerances are not formal exact arithmetic certification.",
+    "cutoff_permutations": "Actual enumerated permutation costs and population errors. The full-channel error column is a proved upper bound, checked on full small-bath channels in the unittest suite.",
+    "large_construction": "Analytic heat/error upper bounds from explicit cutoff permutations; every accepted rank expansion uses exact integer arithmetic. No large Hilbert-space enumeration or optimization.",
+    "probability_arithmetic": "Probability formulas are analytic bounds evaluated in binary64, not interval-certified values. Log bounds and underflow flags are retained; positive ordinary-space bounds are floored at the smallest positive float. The recorded integer k is used with event X>=k+1, so the flexible finite lemma does not rely on the selector reproducing a symbolic floor exactly.",
+    "missing_certificates": "certified=false means the selected cutoff/search returned no certificate; it is not an impossibility statement.",
+    "witness_curves": "W_N(0) is the zero-error intercept of the entropy-production lower bound. Finite full-rank baths cannot reset exactly; these curves are not an attained finite-bath heat or an optimal heat curve.",
+    "cutoff_rule": "Main finite curve uses t=.5 sqrt(log(1+z)); the proof cutoff t=z^(1/4) is also recorded. Both satisfy the asymptotic requirements, and the finite rank condition is independently checked."
+  }
+}
