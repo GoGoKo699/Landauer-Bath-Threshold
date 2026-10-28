@@ -114,7 +114,7 @@ Its conditional two-level state is Gibbs at the same inverse temperature with ga
 Writing $`M\sim\mathrm{Bin}(N,a_N)`$ and $`K\sim\mathrm{Bin}(m,(1+e^{2\beta\delta_N})^{-1})`$, the resulting physical channel has
 
 ```math
-\eta_N\le\Pr[M<m]+\Pr[K>k_*],
+\eta_N\le\Pr[M\lt m]+\Pr[K>k_*],
 \qquad
 \sup_{\rho_S}Q_N(\rho_S)\le2r\delta_N.
 ```
@@ -122,7 +122,7 @@ Writing $`M\sim\mathrm{Bin}(N,a_N)`$ and $`K\sim\mathrm{Bin}(m,(1+e^{2\beta\delt
 For example, $`m=\lfloor Na_N/2\rfloor\ge1`$ gives
 
 ```math
-\Pr[M<m]\le e^{-Na_N^2/2}.
+\Pr[M\lt m]\le e^{-Na_N^2/2}.
 ```
 
 Since $`a_N\to2p(1-p)>0`$, this choice is linear in $`N`$. The [uniform small-gap argument](compression.md) supplies suitable $`k_*`$ and $`r`$ whenever $`m(2\beta\delta_N)^2\to\infty`$, with $`2\beta r\delta_N\to\ln d`$. This proves the attainable half of T1.

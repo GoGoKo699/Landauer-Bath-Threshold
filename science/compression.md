@@ -229,7 +229,7 @@ L=\ln d,\qquad z=mb^2,\qquad
 Assume
 
 ```math
-0<b\le1,\qquad \gamma\le\frac12,
+0\lt b\le1,\qquad \gamma\le\frac12,
 ```
 
 and choose
@@ -278,7 +278,7 @@ x\le p_b+b\left[z^{-1/4}+\frac{2L+1}{z}\right]
 \le p_b+\frac b{12}.
 ```
 
-For $`0<b\le1`$,
+For $`0\lt b\le1`$,
 
 ```math
 p_b>\frac14,\qquad
@@ -293,7 +293,7 @@ The last inequality follows from $`e^b-1\ge b`$ and $`1+e^b\le1+e<4`$. Thus
 x\le\frac12-\frac b{24}<\frac12.
 ```
 
-In particular $`k+r<m/2`$, so $`0\le k\le m-1`$ and $`1\le r\le m-k`$. Also $`x\ge p_b`$: indeed $`r\ge1`$ and $`\lfloor y\rfloor+1\ge y`$ applied to $`y=mp_b+z^{1/4}\sqrt m`$ suffice.
+In particular $`k+r\lt m/2`$, so $`0\le k\le m-1`$ and $`1\le r\le m-k`$. Also $`x\ge p_b`$: indeed $`r\ge1`$ and $`\lfloor y\rfloor+1\ge y`$ applied to $`y=mp_b+z^{1/4}\sqrt m`$ suffice.
 
 Let $`g(x)=\ln[(1-x)/x]`$. On $`[p_b,x]\subset[1/4,1/2]`$,
 

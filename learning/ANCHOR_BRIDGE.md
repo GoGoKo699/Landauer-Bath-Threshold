@@ -460,7 +460,7 @@ p_\pm=\frac1{1+e^{\beta(\Delta\pm\delta_N)}}.
 Consequently the number of active pairs obeys $`M\sim\mathrm{Bin}(N,a_N)`$. Choose $`m=\lfloor Na_N/2\rfloor`$. The inactive-sector error satisfies
 
 ```math
-\Pr[M<m]\le e^{-Na_N^2/2}.
+\Pr[M\lt m]\le e^{-Na_N^2/2}.
 ```
 
 This is a concentration bound [Hoeffding63](../references/LITERATURE.md#hoeffding63), with all floor conditions given in [paired_bath.md](../science/paired_bath.md).
@@ -478,7 +478,7 @@ Both sources of error are retained:
 ```math
 \eta_N
 \le
-\Pr[M<m]
+\Pr[M\lt m]
 +\Pr[\mathrm{Bin}(m,p_{h_N})>k].
 ```
 

@@ -125,14 +125,14 @@ Choose an integer $`1\le m\le N`$ and integers $`k,r`$ satisfying the [finite co
 
 Let $`U_{m,k,r}`$ denote the complete compression permutation from that proof.
 
-For each sector with $`M(\lambda)\ge m`$, select the first $`m`$ active pairs in physical index order. On this sector, apply $`U_{m,k,r}`$ to the memory and those $`m`$ virtual qubits, and act as identity on the other virtual qubits. On sectors with $`M(\lambda)<m`$, act as identity on the memory and the entire sector. Formally,
+For each sector with $`M(\lambda)\ge m`$, select the first $`m`$ active pairs in physical index order. On this sector, apply $`U_{m,k,r}`$ to the memory and those $`m`$ virtual qubits, and act as identity on the other virtual qubits. On sectors with $`M(\lambda)\lt m`$, act as identity on the memory and the entire sector. Formally,
 
 ```math
 U_N=\bigoplus_\lambda U_\lambda,\qquad
 U_\lambda=
 \begin{cases}
 U_{m,k,r}\otimes I_{M(\lambda)-m},&M(\lambda)\ge m,\\
-I_{S\otimes\mathcal H_\lambda},&M(\lambda)<m,
+I_{S\otimes\mathcal H_\lambda},&M(\lambda)\lt m,
 \end{cases}
 ```
 
@@ -147,7 +147,7 @@ The construction may require elaborate global control. Its admissibility is the 
 Let
 
 ```math
-\eta_{\mathrm{act}}=\Pr[M<m],\qquad
+\eta_{\mathrm{act}}=\Pr[M\lt m],\qquad
 \eta_{\mathrm{cmp}}=\Pr[K>k],\qquad
 K\sim\mathrm{Bin}(m,p_h).
 ```
@@ -207,7 +207,7 @@ Choose
 m=\left\lfloor\frac{Na_N}{2}\right\rfloor
 ```
 
-and assume $`m\ge1`$. Since $`\mathbb E M=Na_N`$, the event $`M<m`$ implies $`M<Na_N/2`$. Hoeffding's inequality [[Hoeffding63]](../references/LITERATURE.md#hoeffding63) gives
+and assume $`m\ge1`$. Since $`\mathbb E M=Na_N`$, the event $`M\lt m`$ implies $`M\lt Na_N/2`$. Hoeffding's inequality [[Hoeffding63]](../references/LITERATURE.md#hoeffding63) gives
 
 ```math
 \boxed{\;
@@ -249,7 +249,7 @@ L=\ln d,\qquad
 Whenever
 
 ```math
-m\ge1,\qquad 0<b\le1,\qquad \gamma\le\frac12,
+m\ge1,\qquad 0\lt b\le1,\qquad \gamma\le\frac12,
 ```
 
 the [explicit compression selector](compression.md#6-an-explicit-parameter-choice)
