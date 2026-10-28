@@ -51,7 +51,7 @@ AMPLITUDE = 0.35
 def write_csv(path: Path, rows: list[dict]) -> None:
     keys = list(dict.fromkeys(key for row in rows for key in row))
     with path.open("w", newline="", encoding="utf-8") as stream:
-        writer = csv.DictWriter(stream, fieldnames=keys)
+        writer = csv.DictWriter(stream, fieldnames=keys, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
