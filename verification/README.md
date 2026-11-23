@@ -40,8 +40,29 @@ The seed is `20261028`; additional finite tests use their explicitly recorded fi
 | Reference correlations | Apply the full small-bath channel to sampled entangled inputs and compare trace distance with the bath-tail bound | Check channel-tensor and reference conventions; the all-input diamond bound follows from the channel decomposition proof. |
 | Binomial expansion | Exact integer cumulative counts at every shell below accepted cutoffs | Check the finite rank certificate independently of logarithmic approximations. |
 | Uniform explicit selector | Exact rank condition for small gaps and large virtual baths | Check representative cases of the selector used in the joint-limit proof. |
+| Critical-window heat | Finite grouped rank sorting and independent quadrature of the limiting rank map | Check heat normalization, resonance, and convergence in representative critical-window baths. |
 
 The implementation is split by role: [spectral.py](../src/landauer_bath/spectral.py), [compression.py](../src/landauer_bath/compression.py), and [optimization.py](../src/landauer_bath/optimization.py). The tests are in [test_scientific_checks.py](../tests/test_scientific_checks.py); [run_checks.py](../scripts/run_checks.py) generates the committed tables and figures.
+
+## Critical-window heat
+
+Run the [numerical check](../scripts/check_critical_heat.py) for the [critical-window theorem](../science/critical_heat.md) from the repository root.
+
+```bash
+python scripts/check_critical_heat.py
+```
+
+For each case, the script evaluates the Gaussian-smoothed counting function, inverts its rank map, and integrates the resulting displacement against the tilted Gaussian density. It also evaluates finite baths with $`N=24,96,256`$ pairs and $`\delta_N/\Delta=\sqrt{c/N}`$. The sorter uses $`(N+1)^2`$ occupation groups with exact binomial multiplicities. Each group represents bath states with a fixed number of excitations of each gap. The sorter matches blocks of Gibbs eigenvalues to blocks of output energies and accumulates heat and error without enumerating the bath basis.
+
+The target-first order gives maximal target population and minimizes heat among permutations with that population. A second order minimizes $`\beta Q+\alpha L\epsilon`$ by adding $`L\Delta`$ to each output energy outside the reset target before sorting. Both sorts use the maximally mixed memory. The penalty calculation exercises the [finite variational bound](../science/critical_heat.md#an-energy-penalty-for-reset-failure). At a fixed integer $`L`$, the limiting penalized count multiplies the unpenalized count by $`1+(d-1)e^{-\alpha L}`$. The proof recovers the optimal heat by taking the large-bath limit and then sending $`L`$ to infinity.
+
+| $`\alpha=\beta\Delta`$ | $`c`$ | Limiting $`\beta Q`$ | Target-first $`\beta Q`$ at $`N=256`$ | Limit with $`L=8`$ | Penalized objective at $`N=256`$ |
+|---|---:|---:|---:|---:|---:|
+| $`1`$ | 0.05 | 0.723139421 | 0.724972173 | 0.722830115 | 0.724645203 |
+| $`1`$ | 0.10 | 0.707088725 | 0.709420789 | 0.706767663 | 0.709078348 |
+| $`\ln 2`$ | 0.05 | 0.693147181 | 0.702200021 | 0.689294147 | 0.697797946 |
+
+All three cases have $`d=2`$. The resonant example has $`\alpha=\ln 2`$ and limiting heat $`\ln 2`$. The [regression tests](../tests/test_critical_heat.py) compare the grouped sorts with the full basis for two bath pairs and memory dimensions two and three. They also check the three quadrature fixtures and their agreement with the large finite baths. The limiting theorem and the complete-channel guarantee follow from their analytical proofs.
 
 ## Reference run
 
@@ -91,4 +112,4 @@ At the largest tabulated point, $`N=10^{12}`$, the main construction gives the e
 
 The large-bath calculations never enumerate their Hilbert spaces. Rank-expansion acceptance uses exact Python integer arithmetic. Gibbs occupations, binomial-tail evaluations, heat bounds, and concentration bounds use floating-point arithmetic. Positive analytic probability bounds are kept positive on underflow, with logarithmic values recorded where needed; none is presented as an exact zero error. This is not an interval-arithmetic verification of the transcendental factors.
 
-The analytical arguments cover arbitrary bath size, all permitted unitaries, and all memory/reference inputs within the stated assumptions. Finite samples alone cover none of those universal quantifiers. The checks also do not establish efficient gate synthesis, operation time, generic-disorder sufficiency, or the exact optimal heat in the critical window.
+The analytical arguments cover arbitrary bath size, all permitted unitaries, and all memory/reference inputs within the stated assumptions. The numerical checks cover the listed cases. The critical-window quadrature uses finite Gaussian and shell truncations, and the reported agreement is a floating-point diagnostic. Efficient gate synthesis, operation time, and generic-disorder sufficiency lie outside the verification scope.

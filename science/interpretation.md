@@ -56,4 +56,6 @@ The theorem identifies which prescribed baths permit that task in principle. Imp
 
 The resonance condition is also part of the result. At excluded values the particular spectral mismatch vanishes, and the necessity statement is not available. The finite bound remains true there but may give no excess beyond the ordinary Landauer inequality.
 
-The [finite certificates](theorem.md) and [reproduction materials](../verification/README.md) quantify what is proved for finite instances. The explicit critical-window lower bound is useful for obstruction, but it is not an exact optimal crossover curve.
+At finite positive collective detuning, the [exact heat curve](critical_heat.md) follows from how state counts increase across adjacent excitation shells. In the limit, an initial energy offset $`u`$ in its shell must move to the offset $`T(u)`$ at which the cumulative count increases by the memory dimension. The reset sector then accommodates all the original memory labels. The optimal heat averages that displacement over thermally occupied input configurations. At resonance, the required factor in the count is reached by shifting exactly an integer number of shells. Off resonance, the induced energy-phase distribution differs from the original Gibbs phase distribution, and their relative entropy equals the excess heat.
+
+The [finite certificates](theorem.md) and [reproduction materials](../verification/README.md) give the nonasymptotic bounds and the finite numerical comparisons.

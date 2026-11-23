@@ -1,13 +1,16 @@
 # A Collective Threshold for Landauer Erasure
 
 This repository determines when shrinking inhomogeneity in a prescribed paired
-thermal-qubit bath permits a universal memory-reset channel at Landauer heat.
+thermal-qubit bath permits a universal memory-reset channel at Landauer heat,
+and gives the exact limiting heat at finite positive collective detuning.
 
 Canonical science:
 - science/model.md: apparatus, fixed parameters, heat/work boundary, population
   error, half-diamond convention, exact Landauer identity and nonresonance.
 - science/theorem.md: T1 equivalence, finite spectral bound S1, compression C1,
   paired realization P1 and dense-energy-difference consequence.
+- science/critical_heat.md: exact positive-window heat formula, Gaussian shell
+  counts, matching spectral sorter, all-unitary penalty bound and resonance.
 - science/spectral_obstruction.md: complex spectral moment, continuity proof,
   all-unitary finite-error converse and bounded squared-detuning extension.
 - science/compression.md: finite cumulative-binomial certificate, completed
@@ -38,6 +41,7 @@ Attribution and verification:
 - verification/README.md: reproducible commands, output meanings and limits.
 - verification/CLAIMS.md: each central statement and its proof/check evidence.
 - scripts/run_checks.py: deterministic finite numerical reproduction.
+- scripts/check_critical_heat.py: critical curve and finite spectral sorting.
 - results/: committed reference data; use the verification guide to interpret.
 - provenance/README.md: source roles and AI-assistance disclosure.
 
@@ -53,10 +57,11 @@ Essential distinctions:
 - No additional entropy-carrying ancillary system is supplied.
 - A good bath subspace resets the entire memory input space, including
   reference-entangled inputs. Half-diamond error is used, not full diamond.
-- The maximum-input heat tends to ln(d)/beta; a common heat value for every
-  input is not asserted.
-- The spectral lower bound and finite construction need not be optimal at
-  finite N. No exact critical-window optimal heat curve is claimed.
+- At diverging collective detuning the threshold construction has
+  maximum-input heat tending to ln(d)/beta.
+- At finite positive c, the critical-window optimum is an exact asymptotic
+  heat and the sorter attains it uniformly over inputs. It equals ln(d)/beta
+  exactly at resonance. The finite certificates retain their stated scope.
 - The all-unitary converse does not imply an efficient circuit. Finite checks
   do not establish the asymptotic or universal quantifiers on their own.
 - The general unpaired extension is a converse only.
@@ -65,7 +70,8 @@ Essential distinctions:
 Reading intentions:
 - For a conceptual introduction: learning/README, ANCHOR_BRIDGE, then the
   milestones and their linked canonical scientific sections.
-- For the main result: model, theorem, then the two proof branches.
+- For the main results: model, theorem, and critical_heat. Follow each page’s
+  links to its proof ingredients.
 - For implementation: compression, paired_bath, then verification.
 - For significance or priority: interpretation and RELATED_WORK together.
 - For a numerical plot: inspect its generating code and table, and retain

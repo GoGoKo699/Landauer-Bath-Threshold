@@ -141,4 +141,4 @@ Its spacing tends to zero and its bandwidth tends to infinity, so available posi
 
 The Landauer identity, finite-bath cooling by spectral rearrangement, virtual-qubit methods and fixed-gap obstructions are established ingredients. The [comparison](../references/RELATED_WORK.md) identifies their sources. The additional theorem here is the collective shrinking-inhomogeneity threshold, with a uniform all-unitary converse and a construction in the stated resource model.
 
-The threshold determines attainability in the limit. Exact optimal heat in the critical window, arbitrary unpaired-bath sufficiency, interactions and efficient control synthesis are separate questions. The finite bounds above support the stated theorem without resolving those questions.
+The threshold determines attainability in the limit. The [critical heat theorem](critical_heat.md) determines the exact optimal asymptotic heat at finite positive collective detuning for the paired bath. The results concern globally driven unitaries. Sufficiency for arbitrary unpaired baths, interacting reservoirs and efficient control synthesis remain separate questions.

@@ -22,7 +22,15 @@ Thus the collective scale $`\sqrt N\,\delta_N`$ determines attainability in this
 | $`\delta_N/\Delta\sim aN^{-1/2}`$, fixed $`a>0`$ | Finite collective detuning | A strictly positive excess heat persists. |
 | $`\delta_N/\Delta\ll N^{-1/2}`$ | Accumulated squared detuning vanishes | A strictly positive excess heat persists. |
 
-The [theorem](science/theorem.md) gives the exact quantifiers. Its converse applies to every allowed unitary, including coherent operations and protocols whose reset error vanishes arbitrarily slowly. Its construction resets arbitrary memory inputs, including reference-entangled inputs, and has a uniform heat upper bound. The limiting maximum-input heat is $`k_{\mathrm B}T\ln d`$.
+The [theorem](science/theorem.md) gives the exact quantifiers. Its converse applies to every allowed unitary, including coherent operations and protocols whose reset error vanishes arbitrarily slowly. Its construction resets arbitrary memory inputs, including reference-entangled inputs, and has a uniform heat upper bound. Above the threshold the limiting maximum-input heat is $`k_{\mathrm B}T\ln d`$.
+
+## Exact heat at the threshold scale
+
+When $`c_N=N(\delta_N/\Delta)^2`$ converges to a finite positive $`c`$, the [critical heat theorem](science/critical_heat.md) gives the exact minimum asymptotic heat. The calculation uses the cumulative number of bath states across neighboring excitation shells. It predicts which higher-energy states must receive the joint Gibbs weights to make room for every memory label in the reset sector.
+
+A spectral-sorting unitary attains the optimum uniformly over memory inputs, including half-diamond reset accuracy. A fixed energy penalty for reset failure gives a matching lower bound for every joint unitary with vanishing error. Off resonance the excess over Landauer heat is positive for every finite positive $`c`$ and decreases as $`c`$ grows. At resonance, the energy shift is an integer number of baseline gaps and the excess vanishes.
+
+For a one-bit memory with $`\beta\Delta=1`$ and $`c=0.05`$, the minimum is about $`0.72314\,k_{\mathrm B}T`$. The Landauer value is about $`0.69315\,k_{\mathrm B}T`$. [Formula, proof and finite calculation](science/critical_heat.md)
 
 ## What establishes the threshold
 
@@ -44,6 +52,7 @@ Start with the [scientific route](science/README.md) or go directly to the [mode
 |---|---|
 | What apparatus and heat objective are allowed? | [Model and conventions](science/model.md) |
 | What is the precise necessary-and-sufficient result? | [Threshold theorem](science/theorem.md) |
+| What is the exact optimal heat at finite positive collective detuning? | [Critical heat theorem](science/critical_heat.md) |
 | Why does the obstruction cover every unitary? | [Spectral obstruction](science/spectral_obstruction.md) |
 | How is the permutation completed, and why is its heat bounded? | [Small-gap compression](science/compression.md) |
 | How does the physical bath supply the virtual qubits? | [Paired-bath construction](science/paired_bath.md) |
@@ -69,6 +78,7 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 python -m unittest discover -s tests -v
 python scripts/run_checks.py
+python scripts/check_critical_heat.py
 ```
 
 On Windows, activate with `.venv\Scripts\Activate.ps1`. The [verification guide](verification/README.md) explains the finite-unitary checks, optimization comparisons, exact permutation tests, binomial certificates, generated figures and committed reference outputs. The general theorem is established by the analytical proofs.
@@ -77,7 +87,7 @@ On Windows, activate with `.venv\Scripts\Activate.ps1`. The [verification guide]
 
 The matching threshold concerns a paired, noninteracting bath at fixed positive temperature, with fixed memory dimension and baseline gap. The necessity statement excludes the stated resonances. A broader converse covers bounded squared perturbations of product baths; sufficiency for arbitrary unpaired spectra is not asserted.
 
-Predetermined global driving is allowed. There is no additional entropy sink, catalyst, refreshed reservoir or measurement record. Circuit complexity, locality and operation time are separate resources. The finite critical-window bound is a lower bound, not an exact optimal heat curve.
+Predetermined global driving is allowed. There is no additional entropy sink, catalyst, refreshed reservoir or measurement record. Circuit complexity, locality and operation time are separate resources. The exact crossover curve concerns the positive finite collective-detuning limit. The finite-bath certificates apply at their stated nonasymptotic parameters.
 
 ## Purpose and contact
 

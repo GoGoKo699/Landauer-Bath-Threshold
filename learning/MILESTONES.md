@@ -4,7 +4,7 @@
 
 This map records the project's understanding targets and their scientific dependencies. The **single educational anchor** is Sai Vinjanampathy and Janet Anders, *Quantum Thermodynamics* (2016), [arXiv:1508.06099v2](https://arxiv.org/abs/1508.06099v2). The [bridge](ANCHOR_BRIDGE.md) translates its notation and connects its treatment to the present model.
 
-The allocation is **14 background/preliminaries milestones and 16 narrative/innovation milestones**. The background must connect quantum states, thermal populations, heat, channel accuracy, spectral constraints, and probability before the apparatus and asymptotic question can be understood together. The narrative then develops two distinct proof branches—the obstruction and the construction—and joins them in the threshold theorem. Each phase progresses from individual objects and mechanisms to an integrated account. The map tracks global understanding; specialist calculations remain in the canonical proof pages.
+The allocation is **14 background/preliminaries milestones and 16 narrative/innovation milestones**. The background connects quantum states, thermal populations, heat, channel accuracy, spectral constraints, and probability. The narrative first combines the obstruction and the construction into the threshold theorem, then uses a finer spectral count to obtain the exact heat at finite positive collective detuning. The scientific pages supply the specialist calculations.
 
 ## Source conventions
 
@@ -17,7 +17,7 @@ The allocation is **14 background/preliminaries milestones and 16 narrative/inno
 | [§2.4, pp. 6–7](https://arxiv.org/pdf/1508.06099v2#page=6) | Erasure with accessible quantum side information. |
 | [§4.1, pp. 17–20](https://arxiv.org/pdf/1508.06099v2#page=17) | Quantum channels, unitary dilation, relative entropy, and contractivity. |
 
-An anchor pointer marked **context** supplies the physical or mathematical setting. The accompanying **project-supplied** pointer identifies an argument developed or explicitly imported in the repository's proofs. In particular, the review is not the source of the spectral witness, the compression certificate, or the collective-detuning threshold. Primary attributions remain in the [source guide](../references/LITERATURE.md).
+An anchor pointer marked **context** supplies the physical or mathematical setting. The accompanying **project-supplied** pointer identifies an argument developed or explicitly imported in the repository's proofs. These include the spectral witness, the compression certificate, the collective-detuning threshold, and the critical heat curve. The [source guide](../references/LITERATURE.md) records their antecedents.
 
 <a id="background-preliminaries"></a>
 ## Background / preliminaries
@@ -167,7 +167,7 @@ M01–M14 assemble the objects, operational distinctions, and quantifiers needed
 <a id="narrative-innovation"></a>
 ## Narrative / innovation
 
-M15–M19 build the obstruction. M20–M24 build a small-gap compression protocol. M25–M27 realize it inside the physical bath. M28–M30 combine the branches and interpret the result.
+M15–M19 build the obstruction. M20–M24 build a small-gap compression protocol and M25–M27 realize it inside the physical bath. M28 combines these branches into the threshold. M29–M30 count and match the bath energy ranks to find the minimum heat at finite positive detuning.
 
 <a id="m15"></a>
 ### M15. A multiplicative spectral witness
@@ -310,21 +310,21 @@ M15–M19 build the obstruction. M20–M24 build a small-gap compression protoco
 - **Source pointers:** VA16 §2.3 supplies the erasure question; the equivalence is project-supplied in [T1](../science/theorem.md#t1-exact-attainability-threshold) and the [paired joint limit](../science/paired_bath.md#7-sufficiency-in-the-joint-limit).
 
 <a id="m29"></a>
-### M29. Dense gaps, finite curves, and physical meaning
+### M29. Count occupied shells and match spectral ranks
 
-**Central question:** What does the threshold reveal that formal gap density or a finite numerical plot cannot decide?
+**Central question:** How does the finite positive detuning scale determine the heat of an explicit reset permutation?
 
-- **Understanding target:** Compare the bandwidth $`N\delta_N`$ with the fluctuation scale $`\sqrt N\delta_N`$ using $`1/2<\alpha<1`$. Distinguish a witness intercept, a numerical population optimum, and a constructive channel bound when reading the finite evidence.
-- **Dependencies and story role:** M18–M19 and M27–M28. Connects the theorem to its physical interpretation and finite manifestations.
-- **Conceptual connection:** Available transitions and thermally useful weight answer different questions; finite computations illustrate analytical claims under their own accuracy conventions.
-- **Source pointers:** VA16 §2.3 for finite-resource context; project-supplied [dense-gap consequence](../science/theorem.md#a-dense-gap-regime-that-still-has-excess-heat), [interpretation](../science/interpretation.md), and [verification contracts](../verification/README.md#reading-the-figures-correctly).
+- **Understanding target:** Explain why counting levels within a shell gives a centered Gaussian offset and Gibbs weighting shifts its mean. Use neighboring shell multiplicities to build $`A(u)`$, and explain why $`d`$ memory labels per bath state require $`A(T(u))=dA(u)`$. Connect the matched ranks to the heat average and the uniform reset guarantee.
+- **Dependencies and story role:** M10, M12–M14, M20–M23, and M28. Builds a new attaining protocol for a window where the small-gap construction no longer yields reversible erasure at nonresonance.
+- **Conceptual connection:** Rank counts determine where the information can move. Thermal weights determine the energy cost of that movement. A large available bandwidth alone supplies neither count near occupied levels nor small excess heat.
+- **Source pointers:** VA16 §§2.1 and 2.3 for context; project-supplied [shell counts](../science/critical_heat.md#counting-thermally-occupied-shells), [matching reset](../science/critical_heat.md#matching-reset-and-all-unitary-converse), and the [worked example](ANCHOR_BRIDGE.md#critical-heat-example). For the bandwidth comparison, see the [dense-gap consequence](../science/theorem.md#a-dense-gap-regime-that-still-has-excess-heat).
 
 <a id="m30"></a>
-### M30. Contribution, scope, and synthesis
+### M30. Exact critical heat, optimality, and resonance
 
-**Central question:** What complete conclusion follows, which ingredients support it, and where do its assumptions matter?
+**Central question:** Why is the rank-matched heat optimal over all allowed unitaries, and when is it reversible?
 
-- **Understanding target:** Explain the physical question, both proof mechanisms, and the threshold in one connected account. Separate inherited entropy identities, sorting, virtual qubits, and maximal-cooling resonance results from the shrinking-detuning theorem. State the limits concerning resonance, unpaired spectra, exact crossover heat, and implementation resources.
-- **Dependencies and story role:** M14 and M28–M29, drawing together the intervening proof branches. Integrates the complete scientific story.
-- **Conceptual connection:** The result concerns reversible erasure with a prescribed, thermally occupied spectrum under a specified control model; its significance follows from that full combination of assumptions and conclusions.
-- **Source pointers:** VA16 §§2.1, 2.3–2.4, and 4.1 frame the task; [T1 and scope](../science/theorem.md), [model](../science/model.md), [related work](../references/RELATED_WORK.md), and [claim-to-evidence map](../verification/CLAIMS.md) give the canonical synthesis.
+- **Understanding target:** Explain why penalizing failure at a fixed energy first gives a lower bound for arbitrary vanishing-error sequences, and why the large-bath limit precedes removal of the penalty constraint. Recover the heat $`\alpha\mathbb E[T(U)-U]`$ and explain why $`\ln d/\alpha\in\mathbb Z`$ gives a rigid shell shift with zero excess. State the distinct scope of the finite positive heat curve and the threshold at diverging detuning.
+- **Dependencies and story role:** M09–M11, M14, and M28–M29. Combines the exact lower bound, attaining permutation, and resonance criterion with the earlier attainability threshold.
+- **Conceptual connection:** The heat excess measures the distortion in the thermally occupied shell phase under spectral matching. The shape of that phase distribution determines whether reversibility is attainable under the specified global control.
+- **Source pointers:** VA16 §§2.1, 2.3–2.4, and 4.1 frame the task; see the [exact curve](../science/critical_heat.md#the-exact-heat-curve), [all-unitary converse](../science/critical_heat.md#matching-reset-and-all-unitary-converse), [resonance](../science/critical_heat.md#resonance-and-limiting-cases), [threshold](../science/theorem.md), and [related work](../references/RELATED_WORK.md).
