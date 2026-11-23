@@ -1,0 +1,52 @@
+name: Verify Landauer hosted mathematics
+
+on:
+  push:
+    branches:
+      - merlin/verify-landauer-critical-heat
+
+permissions:
+  contents: read
+
+jobs:
+  hosted:
+    if: github.repository == 'GoGoKo699/Landauer-Bath-Threshold'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      SCIENTIFIC_COMMIT: '8b06fe26c81b0f86ae32414bd0f8ebfab8606219'
+    steps:
+      - name: Check out verification scripts
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Check out the exact scientific revision
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ env.SCIENTIFIC_COMMIT }}
+          path: scientific-source
+          persist-credentials: false
+      - name: Set up Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Install anonymous browser runtime
+        run: |
+          npm install --prefix "$RUNNER_TEMP/math-runtime" playwright@1.56.1 mathjax-full@3.2.1
+          node "$RUNNER_TEMP/math-runtime/node_modules/playwright/cli.js" install --with-deps chromium
+      - name: Capture exact GitHub mathematics
+        run: |
+          export NODE_PATH="$RUNNER_TEMP/math-runtime/node_modules"
+          node "$GITHUB_WORKSPACE/verification/hosted-math/capture_hosted_math.cjs" \
+            --root "$GITHUB_WORKSPACE/scientific-source" \
+            --repository "$GITHUB_REPOSITORY" \
+            --revision "$SCIENTIFIC_COMMIT" \
+            --output "$RUNNER_TEMP/landauer-hosted"
+      - name: Retain actual captures
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: landauer-hosted-${{ env.SCIENTIFIC_COMMIT }}
+          path: ${{ runner.temp }}/landauer-hosted
+          if-no-files-found: error
+          retention-days: 7
