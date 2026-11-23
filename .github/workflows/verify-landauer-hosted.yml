@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     env:
-      SCIENTIFIC_COMMIT: '30d9ecfe7976bd244d30535c4c813a77eb0b29e4'
+      SCIENTIFIC_COMMIT: 'a61f2fa73489055b71d93df59cb22a9d216ae440'
     steps:
       - name: Check out verification scripts
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
