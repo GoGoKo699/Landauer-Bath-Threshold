@@ -46,7 +46,7 @@ For uniform counting at fixed total excitation $`J=k`$, the number of configurat
 \Pr(D_k=z)=
 \frac{\binom N{(k+z)/2}\binom N{(k-z)/2}}{\binom{2N}k},
 \qquad
-v_{N,k}:=\operatorname{Var}(D_k)=\frac{k(2N-k)}{2N-1}.
+v_{N,k}:=\mathrm{Var}(D_k)=\frac{k(2N-k)}{2N-1}.
 ```
 
 The probability is zero unless both binomial indices are integers in range. For $`k/(2N)\to p`$, this hypergeometric law is asymptotically normal on the scale $`\sqrt N`$. One way to see uniformity over such typical indices is to use Stirling's formula in the displayed probability. For admissible $`|z|\le C\sqrt N`$, expanding the two log-binomial terms about $`k/2`$ cancels the linear terms. The result, uniformly in that range, is
