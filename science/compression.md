@@ -163,7 +163,7 @@ The thermal bath is diagonal in the chosen basis. Its ranks $`j\le R`$ have tota
 The diamond distance between two channels is at most $`2`$, so
 
 ```math
-\frac12\|\mathcal E_{m,k,r}-\mathcal R\|_\diamond
+\frac12\Vert\mathcal E_{m,k,r}-\mathcal R\Vert_\diamond
 \le\eta_m.
 ```
 
@@ -245,7 +245,7 @@ Then all the finite-lemma conditions hold. Furthermore,
 
 ```math
 \boxed{\;
-\frac12\|\mathcal E_{m,k,r}-\mathcal R\|_\diamond
+\frac12\Vert\mathcal E_{m,k,r}-\mathcal R\Vert_\diamond
 \le e^{-2\sqrt z},\qquad
 \beta Q_{m,k,r}(\rho)
 \le\frac{L}{1-\gamma}+b

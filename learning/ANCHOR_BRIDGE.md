@@ -1,12 +1,12 @@
 # From quantum thermodynamics to the paired-bath threshold
 
-[Learning guide](README.md) · [Milestones](MILESTONES.md) · [Model](../science/model.md) · [Threshold theorem](../science/theorem.md)
+[Learning guide](README.md) · [Milestones](MILESTONES.md) · [Model](../science/model.md) · [Threshold theorem](../science/theorem.md) · [Critical heat](../science/critical_heat.md)
 
 The educational anchor is **Sai Vinjanampathy and Janet Anders, “Quantum Thermodynamics”**, *Contemporary Physics* **57**(4), 545–579 (2016). This bridge uses **arXiv:1508.06099v2, revised 10 May 2016**: [version record](https://arxiv.org/abs/1508.06099v2), [official PDF](https://arxiv.org/pdf/1508.06099v2), and [published article](https://doi.org/10.1080/00107514.2016.1201896). All source page and equation numbers below refer to that 48-page author version. The bibliographic entry is [VA16](../references/LITERATURE.md#va16).
 
-The project asks a precise attainability question. A memory must be reset using one prescribed finite thermal bath and a global unitary. As the bath grows, its individual qubit gaps become increasingly alike. Does the bath still permit reset at the Landauer heat, and how much variation must survive?
+The project asks how much heat a memory reset must dissipate into one prescribed thermal bath. A global unitary resets the memory while the bath qubit gaps become increasingly alike. Which detuning scales permit the Landauer heat, and what is the minimum when the collective detuning stays finite and positive?
 
-The review supplies the thermodynamic and channel language. The additional steps developed here connect that language to the spectral obstruction and the explicit bath construction. The detailed proofs have their authoritative homes in the [scientific account](../science/README.md).
+The review supplies the thermodynamic and channel language. The additional steps developed here connect that language to the spectral obstruction, the explicit bath construction, and the exact critical heat obtained by counting and matching bath energy ranks. The [scientific account](../science/README.md) contains the proofs.
 
 <a id="reading-route"></a>
 ## 1. A focused route through the review
@@ -20,7 +20,7 @@ The review supplies the thermodynamic and channel language. The additional steps
 
 Within Section 4.1, the relevant sequence is the definition of a completely positive trace-preserving map, its unitary dilation, and the entropy inequalities. The general master-equation discussion provides broader context; the present argument works directly with one finite unitary and does not require a Markovian approximation.
 
-The project-specific route then separates into the [spectral converse, M15–M19](MILESTONES.md#m15), the [compression construction, M20–M24](MILESTONES.md#m20), and the [physical paired-bath implementation, M25–M27](MILESTONES.md#m25).
+The project-specific route begins with the [spectral converse, M15–M19](MILESTONES.md#m15), the [compression construction, M20–M24](MILESTONES.md#m20), and the [physical paired-bath implementation, M25–M27](MILESTONES.md#m25). It then combines them into the [threshold, M28](MILESTONES.md#m28) and derives the [exact critical heat, M29–M30](MILESTONES.md#m29).
 
 <a id="conventions"></a>
 ## 2. Translate the conventions before calculating
@@ -185,7 +185,7 @@ The mismatch is measurable only if a small trace-norm change cannot produce a la
 
 ```math
 |F_t(\rho)-F_t(\omega)|
-\le\sqrt{1+t^2}\,\|\rho-\omega\|_1.
+\le\sqrt{1+t^2}\,\Vert\rho-\omega\Vert_1.
 ```
 
 Its proof combines the scalar derivative $`|(x^{1+it})'|=\sqrt{1+t^2}`$ with an ordered-eigenvalue perturbation inequality [Mirsky60](../references/LITERATURE.md#mirsky60). This is a trace-functional estimate; it does not assume an operator-Lipschitz theorem for matrix powers. The [spectral proof](../science/spectral_obstruction.md#2-a-dimension-independent-spectral-witness) handles zero eigenvalues and the reset-error term.
@@ -228,7 +228,7 @@ the product tends to
 A_N\longrightarrow e^{-8\pi^2p(1-p)c}>0.
 ```
 
-The phase mismatch is nonzero exactly when $`\ln d/(\beta\Delta)\notin\mathbb Z`$. For example, $`d=2`$ and $`\beta\Delta=\ln4`$ give $`d^{-it_0}=-1`$. The witness then forbids Landauer saturation on every bounded-$`c_N`$ subsequence. It supplies a lower bound, not an exact optimum heat curve.
+The phase mismatch is nonzero exactly when $`\ln d/(\beta\Delta)\notin\mathbb Z`$. For example, $`d=2`$ and $`\beta\Delta=\ln4`$ give $`d^{-it_0}=-1`$. The witness then forbids Landauer saturation on every bounded-$`c_N`$ subsequence. The exact minimum at finite positive collective detuning follows from the [full rank count in §9](#critical-heat-example).
 
 The complete argument is [M15–M19](MILESTONES.md#m15) and [spectral_obstruction.md](../science/spectral_obstruction.md). The construction must now show that divergence of $`c_N`$ is sufficient.
 
@@ -278,7 +278,7 @@ Let $`\eta_{\mathrm{cmp}}=\Pr[\mathrm{Bin}(m,p_b)>k]`$. Because the bath initial
 for some channel $`\mathcal B`$. The diamond distance between two channels is at most $`2`$, hence
 
 ```math
-\frac12\|\mathcal C-\mathcal R\|_\diamond
+\frac12\Vert\mathcal C-\mathcal R\Vert_\diamond
 \le\eta_{\mathrm{cmp}}.
 ```
 
@@ -375,7 +375,7 @@ There are six states in the one-excitation shell. Therefore the excluded probabi
 =0.34464.
 ```
 
-The full channel obeys $`\tfrac12\|\mathcal C-\mathcal R\|_\diamond\le0.34464`$.
+The full channel obeys $`\tfrac12\Vert\mathcal C-\mathcal R\Vert_\diamond\le0.34464`$.
 
 For a maximally mixed memory, the actual target-population error can also be counted. Non-target inputs on bad bath ranks contribute $`\eta_{\mathrm{cmp}}/2`$. The seven overflow inputs, each of bath probability $`w_2`$ and memory probability $`1/2`$, contribute another $`7w_2/2`$. Thus
 
@@ -507,6 +507,41 @@ If $`c_N\to\infty`$, the small-gap compression theorem applies and the inactive-
 
 Conversely, at nonresonance, any bounded subsequence of $`c_N`$ retains a positive spectral witness and hence a positive heat excess for every vanishing-error protocol. These two arguments prove the [three-way equivalence](../science/theorem.md#t1-exact-attainability-threshold) of ordinary Landauer attainability, $`c_N\to\infty`$, and universal-channel attainability with the same limiting worst-input heat.
 
-The bath architecture, fixed $`d`$, $`\beta`$, and $`\Delta`$, global driving, and absence of additional entropy sinks are part of that statement. The necessary direction excludes the arithmetic resonances. The constructive direction uses the paired spectrum. Exact critical-window optimal heat and efficient local control are separate questions.
+The bath architecture, fixed $`d`$, $`\beta`$, and $`\Delta`$, global driving, and absence of additional entropy sinks are part of that statement. The necessary direction applies at nonresonance. The constructive direction uses the paired spectrum.
 
-The distinction developed from the review's erasure discussion is between an entropy lower bound and an attainable operation with specified resources. The bath can have increasingly dense energy differences while retaining the spectral obstruction: the available virtual bandwidth scales as $`N\delta_N`$, while the occupied fluctuation scale is $`\sqrt N\,\delta_N`$. The [physical interpretation](../science/interpretation.md), [finite verification guide](../verification/README.md), and [M28–M30](MILESTONES.md#m28) connect this distinction to the theorem and its plotted certificates.
+The bath can have increasingly dense energy differences while retaining the spectral obstruction. The available virtual bandwidth scales as $`N\delta_N`$, while the occupied fluctuation scale is $`\sqrt N\,\delta_N`$. The [physical interpretation](../science/interpretation.md), [finite verification guide](../verification/README.md), and [M28](MILESTONES.md#m28) connect this distinction to the threshold.
+
+<a id="critical-heat-example"></a>
+## 9. Calculate the minimum heat at finite positive detuning
+
+The exact heat balance in [§3](#exact-balance) gives the Landauer lower bound. To find the excess heat when $`c_N\to c\in(0,\infty)`$, first count bath basis states at or below a given energy. Then weight the heat over the Gibbs-distributed input levels. These two steps use different distributions.
+
+### Count levels, then weight the occupied levels
+
+Let $`\alpha=\beta\Delta`$, $`p=(1+e^\alpha)^{-1}`$, and $`\sigma^2=2p(1-p)c`$. In bath energy units of $`\Delta`$, an input near the thermally typical excitation shell $`j`$ has energy $`j+u`$. If all configurations with that excitation count are given equal weight, their offsets $`u`$ approach a normal distribution with mean zero and variance $`\sigma^2`$. The multiplicity of shell $`j+m`$ relative to shell $`j`$ tends to $`e^{\alpha m}`$. The Gaussian fraction below $`u-m`$ in each neighboring shell therefore gives the cumulative count curve
+
+```math
+A(u)=\sum_{m\in\mathbb Z}e^{\alpha m}\Phi\!\left(\frac{u-m}{\sigma}\right),
+```
+
+where $`\Phi`$ is the standard normal distribution function. When averaging over the actual thermal input, the Gibbs weight tilts the offset law by $`e^{-\alpha u}`$. The offset $`U`$ then has mean $`-\alpha\sigma^2`$ and the same variance $`\sigma^2`$. See [the shell counting argument](../science/critical_heat.md#counting-thermally-occupied-shells).
+
+### Match spectral ranks to reset the memory
+
+For every bath basis state, there are $`d`$ input memory labels and one target memory label. Sort both lists by increasing bath energy. In the limit, matching ranks means that the destination cumulative bath count is $`d`$ times the source count. The destination offset is therefore $`T(u)=A^{-1}(dA(u))`$. The limiting dimensionless heat is
+
+```math
+\beta Q_{\mathrm{crit}}=\alpha\,\mathbb E[T(U)-U].
+```
+
+For example, take a two-level memory, $`\alpha=1`$, and $`c=0.05`$. Then $`p\approx0.2689`$, $`\sigma^2\approx0.01966`$, and the input offset is centered at $`-0.01966`$. Solving the count equation for each input offset and averaging gives $`\beta Q_{\mathrm{crit}}\approx0.72314`$, compared with the Landauer value $`\ln 2\approx0.69315`$.
+
+The finite sorting permutation resets the bath inputs whose entire memory subspace fits inside the target sector. On such a subspace, the distinct bath outputs carry the full memory input, including its correlations with a reference. The thermal weight of the other bath inputs tends to zero. The ranks of the $`d`$ input labels for a given bath basis state differ by at most $`d-1`$ when ties are kept in bath-basis order. Their limiting energy shifts agree, so the permutation achieves the same asymptotic heat for the worst memory input.
+
+The converse minimizes a different finite objective first. It adds a fixed energy penalty for ending outside the reset sector. Spectral rearrangement minimizes that penalized objective over all unitaries, while for any vanishing-error reset the penalty contribution tends to zero at each fixed penalty. Sending bath size to infinity before increasing the penalty yields the lower bound even when the error decays arbitrarily slowly. See [the matching reset and converse](../science/critical_heat.md#matching-reset-and-all-unitary-converse).
+
+### Recognize a resonance from the count curve
+
+The curve satisfies $`A(u+1)=e^\alpha A(u)`$. If $`\ln d/\alpha`$ is an integer, a fixed shift of exactly that many shells multiplies the count by $`d`$. The resulting heat is $`\beta Q_{\mathrm{crit}}=\ln d`$. Otherwise the fractional shell position changes under rank matching. The phase distribution incurs a strictly positive relative-entropy cost, which gives the excess heat in the [critical heat proof](../science/critical_heat.md#resonance-and-limiting-cases).
+
+The finite positive window, the divergent regime in [§8](#threshold), and the zero-detuning endpoint involve different limits. The calculation above uses a strictly positive limiting shell variance.

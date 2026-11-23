@@ -27,8 +27,8 @@ All logarithms are natural. The bath has full rank because its dimension and inv
 \begin{aligned}
 \Sigma
 &:=\beta Q-\ln d+S(\sigma_S)\\
-&=D\!\left(\sigma_{SB}\,\middle\|\,\sigma_S\otimes\tau_B\right)\\
-&=I(S:B)_\sigma+D(\sigma_B\|\tau_B).
+&=D\!\left(\sigma_{SB}\,\middle\Vert\,\sigma_S\otimes\tau_B\right)\\
+&=I(S:B)_\sigma+D(\sigma_B\Vert\tau_B).
 \end{aligned}
 ```
 
@@ -67,7 +67,7 @@ The required continuity estimate is
 ```math
 \boxed{\;
 |F_t(\rho)-F_t(\omega)|
-\le L_t\|\rho-\omega\|_1 .
+\le L_t\Vert\rho-\omega\Vert_1 .
 \;}
 ```
 
@@ -84,7 +84,7 @@ Let $`\lambda_j^\downarrow(\rho)`$ and $`\lambda_j^\downarrow(\omega)`$ be eigen
 ```math
 \sum_j
 \left|\lambda_j^\downarrow(\rho)-\lambda_j^\downarrow(\omega)\right|
-\le\|\rho-\omega\|_1 .
+\le\Vert\rho-\omega\Vert_1 .
 ```
 
 This standard matrix inequality follows from the majorization form of the Hermitian eigenvalue perturbation theorem; its precise convention and sources are recorded under [[Mirsky60]](../references/LITERATURE.md#mirsky60). Therefore
@@ -97,7 +97,7 @@ This standard matrix inequality follows from the majorization form of the Hermit
       -f_t(\lambda_j^\downarrow(\omega))\right|\\
 &\le L_t\sum_j
 \left|\lambda_j^\downarrow(\rho)-\lambda_j^\downarrow(\omega)\right|\\
-&\le L_t\|\rho-\omega\|_1.
+&\le L_t\Vert\rho-\omega\Vert_1.
 \end{aligned}
 ```
 
@@ -108,7 +108,7 @@ The estimate concerns the trace of a matrix function. No operator-Lipschitz esti
 Since $`\lambda_{\max}(\sigma_S)\ge\langle0|\sigma_S|0\rangle=1-\epsilon`$, a projector $`P`$ onto a largest-eigenvalue eigenvector obeys
 
 ```math
-\|\sigma_S-P\|_1
+\Vert\sigma_S-P\Vert_1
 =2[1-\lambda_{\max}(\sigma_S)]\le2\epsilon.
 ```
 
@@ -147,7 +147,7 @@ where $`x_+=\max\{x,0\}`$.
 Quantum Pinsker's inequality with natural logarithms is
 
 ```math
-D(\rho\|\omega)\ge\frac12\|\rho-\omega\|_1^2.
+D(\rho\Vert\omega)\ge\frac12\Vert\rho-\omega\Vert_1^2.
 ```
 
 This convention is detailed in [[Pinsker]](../references/LITERATURE.md#pinsker). Combining it with the preceding estimates proves, for every real $`t`$ and every allowed joint unitary,

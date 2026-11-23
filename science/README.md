@@ -4,7 +4,7 @@
 
 For an entry through thermodynamic concepts and the selected Vinjanampathy–Anders review, use the [learning guide](../learning/README.md), [source bridge](../learning/ANCHOR_BRIDGE.md), and [30-milestone map](../learning/MILESTONES.md). The route below leads directly through the authoritative scientific account.
 
-This project asks when a bath made of increasingly similar thermal qubits can erase a memory reversibly. The main result identifies the collective detuning scale that separates Landauer attainability from a positive heat excess.
+This project asks when a bath made of increasingly similar thermal qubits can erase a memory reversibly. The threshold identifies the collective detuning scale for Landauer attainability. The critical heat theorem determines the exact optimal heat when the collective detuning converges to a finite positive value.
 
 ## Connected reading route
 
@@ -13,7 +13,8 @@ This project asks when a bath made of increasingly similar thermal qubits can er
 3. [Spectral obstruction](spectral_obstruction.md) derives a bound that applies to every global unitary.
 4. [Small-gap compression](compression.md) constructs a complete permutation, including its heat-controlled overflow, and proves the uniform joint limit.
 5. [Paired bath](paired_bath.md) embeds the compression into the thermally occupied one-excitation sectors without measurement or auxiliary memory.
-6. [Physical interpretation](interpretation.md) explains why formal spectral density and thermodynamic reversibility are different requirements.
+6. [Critical heat](critical_heat.md) gives the sharp heat curve, a matching sorter, and a converse for arbitrary vanishing error.
+7. [Physical interpretation](interpretation.md) explains why formal spectral density and thermodynamic reversibility are different requirements.
 
 Each proof has one authoritative home. The theorem page collects its consequences without replacing the detailed arguments.
 
@@ -26,6 +27,7 @@ Each proof has one authoritative home. The theorem page collects its consequence
 | Uniform small-gap attainability | Exact thermal log-odds and a moderate-deviation cutoff | [Compression](compression.md) |
 | Physical paired-bath realization P1 | Orthogonal activity sectors and a binomial occupation tail | [Paired bath](paired_bath.md) |
 | Necessary-and-sufficient threshold T1 | S1, C1 and P1 | [Theorem](theorem.md) |
+| Exact critical heat and resonance | Gaussian shell counting and penalized spectral rearrangement | [Critical heat](critical_heat.md) |
 | Dense available gaps with finite heat excess | Virtual energy-difference grid and S1 | [Theorem](theorem.md#a-dense-gap-regime-that-still-has-excess-heat) |
 
 For attribution and comparison, use [Related work](../references/RELATED_WORK.md) and the [source register](../references/LITERATURE.md). For numerical evidence, use [Verification](../verification/README.md). Finite computations inspect the stated formulas and constructions; the asymptotic and all-unitary quantifiers are supplied by the written proofs.

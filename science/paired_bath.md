@@ -172,7 +172,7 @@ It follows that
 \boxed{\;
 \begin{aligned}
 \eta_N
-:=\frac12\|\mathcal N_N-\mathcal R\|_\diamond
+:=\frac12\Vert\mathcal N_N-\mathcal R\Vert_\diamond
 &\le1-(1-\eta_{\mathrm{act}})(1-\eta_{\mathrm{cmp}})\\
 &\le\eta_{\mathrm{act}}+\eta_{\mathrm{cmp}}.
 \end{aligned}

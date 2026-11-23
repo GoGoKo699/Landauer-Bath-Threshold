@@ -8,7 +8,7 @@ The question here is whether a **prescribed sequence of thermal baths** permits 
 N(\delta_N/\Delta)^2\longrightarrow\infty.
 ```
 
-The scientific addition is the combination of a bound valid for **every allowed joint unitary** and a matching construction in this simultaneous limit. Finite-bath optimization, the Landauer identity, virtual qubits, and homogeneous-bath resonance are established ingredients.
+The threshold combines a bound valid for **every allowed joint unitary** with a matching construction above the threshold scale. The [critical heat curve](../science/critical_heat.md) supplies the exact optimal heat at finite positive collective detuning. Finite-bath optimization, the Landauer identity, virtual qubits, and homogeneous-bath resonance are established ingredients.
 
 ## Foundations used by the proof
 
@@ -36,7 +36,7 @@ That fixed-gap result is not a contribution of this repository. The present conv
 
 Mohammady, Mohseni, and Omar optimize over joint unitaries for finite-dimensional erasure. Section 2.4 and Theorem C.1 give the minimum-heat rule conditional on maximal reset probability. Section 2.5 and Theorem C.2 extend the analysis to the error–heat tradeoff through sequential swaps and partial swaps. Thus their result is broader than a maximum-cooling sorter. [MMO16](LITERATURE.md#mmo16)
 
-The present contribution is not a new finite optimizer. It gives a uniform asymptotic criterion for a specified family of bath spectra, an explicit positive lower bound below its threshold, and a construction above it. Finite optimization provides useful context but does not by itself establish this simultaneous limit.
+The critical heat theorem uses the finite sorting rule on the specified paired thermal bath. A within-shell limit gives the smoothed cumulative counts and their rank displacement. A fixed penalty for reset failure translates that count into an all-unitary heat lower bound, including sequences with arbitrary vanishing error. The absolute heat in this joint limit is the additional result.
 
 ## Spectral requirements and controlled cooling
 
@@ -75,6 +75,6 @@ An inverse-size lower bound can vanish even for a particular bath family whose a
 
 ## Boundaries of the result
 
-The matching necessity and sufficiency theorem is for the paired bath, fixed $`d,\beta,\Delta`$, individually vanishing detunings, and the stated nonresonance condition. The converse extends to more general product baths with bounded total squared detuning; a matching generic-disorder construction is not established. The results do not determine the exact optimal heat in the crossover, gate complexity, locality requirements, or the effect of catalysts, extra entropy sinks, and interactions.
+The matching necessity and sufficiency theorem is for the paired bath, fixed $`d,\beta,\Delta`$, individually vanishing detunings, and the stated nonresonance condition. The converse extends to more general product baths with bounded total squared detuning; a matching generic-disorder construction is not established. The exact heat curve applies at finite positive collective detuning. Gate complexity, locality requirements and the effect of catalysts, extra entropy sinks and interactions remain separate questions.
 
 This comparison records the specific primary results checked in the [source guide](LITERATURE.md), including recent versions available on 28 October 2026. It is not a claim that every conceivable neighboring formulation has been exhausted.

@@ -33,7 +33,7 @@ This guide identifies the exact sources and versions behind the imported proof i
 - **Specialization used:** for positive matrices, with eigenvalues in the same decreasing order,
 
 ```math
-\sum_j|\lambda_j(\rho)-\lambda_j(\omega)|\le\|\rho-\omega\|_1.
+\sum_j|\lambda_j(\rho)-\lambda_j(\omega)|\le\Vert\rho-\omega\Vert_1.
 ```
 
 The original bibliographic record is verified at the publisher. An accessible explicit statement of precisely this specialization is [Shirokov22](#shirokov22), Sec. 2.1, Eq. (3) in the arXiv version; it is Eq. (2.1) in the published version. This source distinction avoids assigning an unchecked equation number to the original paper.
@@ -57,7 +57,7 @@ The original bibliographic record is verified at the publisher. An accessible ex
 - **Exact dependency:** Theorem 5.38, Eq. (5.190), pp. 282–283. The book's base-two relative entropy gives the coefficient $`1/(2\ln2)`$. Multiplying relative entropy by $`\ln2`$ gives the convention used here:
 
 ```math
-D(\rho\Vert\omega)\ge\frac12\|\rho-\omega\|_1^2.
+D(\rho\Vert\omega)\ge\frac12\Vert\rho-\omega\Vert_1^2.
 ```
 
 The proof proceeds through optimal binary discrimination and relative-entropy data processing. The book's bibliographic remarks identify earlier quantum formulations; the label [Pinsker] here names the inequality, not a claim of authorship by Watrous.
