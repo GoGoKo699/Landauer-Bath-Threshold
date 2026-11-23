@@ -91,7 +91,7 @@ Suppose integers $`k_*\ge0`$ and $`r\ge1`$ satisfy $`k_*+r\le m`$ and
 The [explicit permutation](compression.md) then resets the memory for every initial bath basis state of excitation number at most $`k_*`$, and obeys
 
 ```math
-\frac12\|\mathcal C-\mathcal R\|_\diamond
+\frac12\Vert\mathcal C-\mathcal R\Vert_\diamond
 \le\Pr[\mathrm{Bin}(m,p_h)>k_*],
 \qquad
 \sup_{\rho_S}Q(\rho_S)\le rh.

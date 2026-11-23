@@ -185,7 +185,7 @@ The mismatch is measurable only if a small trace-norm change cannot produce a la
 
 ```math
 |F_t(\rho)-F_t(\omega)|
-\le\sqrt{1+t^2}\,\|\rho-\omega\|_1.
+\le\sqrt{1+t^2}\,\Vert\rho-\omega\Vert_1.
 ```
 
 Its proof combines the scalar derivative $`|(x^{1+it})'|=\sqrt{1+t^2}`$ with an ordered-eigenvalue perturbation inequality [Mirsky60](../references/LITERATURE.md#mirsky60). This is a trace-functional estimate; it does not assume an operator-Lipschitz theorem for matrix powers. The [spectral proof](../science/spectral_obstruction.md#2-a-dimension-independent-spectral-witness) handles zero eigenvalues and the reset-error term.
@@ -278,7 +278,7 @@ Let $`\eta_{\mathrm{cmp}}=\Pr[\mathrm{Bin}(m,p_b)>k]`$. Because the bath initial
 for some channel $`\mathcal B`$. The diamond distance between two channels is at most $`2`$, hence
 
 ```math
-\frac12\|\mathcal C-\mathcal R\|_\diamond
+\frac12\Vert\mathcal C-\mathcal R\Vert_\diamond
 \le\eta_{\mathrm{cmp}}.
 ```
 
@@ -375,7 +375,7 @@ There are six states in the one-excitation shell. Therefore the excluded probabi
 =0.34464.
 ```
 
-The full channel obeys $`\tfrac12\|\mathcal C-\mathcal R\|_\diamond\le0.34464`$.
+The full channel obeys $`\tfrac12\Vert\mathcal C-\mathcal R\Vert_\diamond\le0.34464`$.
 
 For a maximally mixed memory, the actual target-population error can also be counted. Non-target inputs on bad bath ranks contribute $`\eta_{\mathrm{cmp}}/2`$. The seven overflow inputs, each of bath probability $`w_2`$ and memory probability $`1/2`$, contribute another $`7w_2/2`$. Thus
 

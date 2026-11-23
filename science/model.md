@@ -77,7 +77,7 @@ For $`\rho=I_d/d`$, write $`Q_N=Q_N(I_d/d)`$ and define
 This is a population error for the specified initial memory. The stronger error convention is
 
 ```math
-\eta_N=\frac12\|\mathcal N_N-\mathcal R\|_\diamond,
+\eta_N=\frac12\Vert\mathcal N_N-\mathcal R\Vert_\diamond,
 \qquad \mathcal R(X)=\mathrm{Tr}(X)|0\rangle\langle0|.
 ```
 
